@@ -12,7 +12,7 @@
 #import "RequisitionViewController.h"
 
 @interface MasterViewController () {
-    NSIndexPath* detailIndex;
+    RequisitionViewController* openingRequisition;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -64,7 +64,9 @@
 #pragma mark - Table View
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    detailIndex = indexPath;
+    NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath: indexPath];
+    [openingRequisition setDate: [object valueForKey:@"timeStamp"]];
+    openingRequisition = nil; // no more needed
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -120,8 +122,7 @@
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
     } else {
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath: detailIndex];
-        [[[segue destinationViewController] myTextField] setText:[[object valueForKey:@"timeStamp"] description]];
+        openingRequisition = [segue destinationViewController];
     }
 }
 

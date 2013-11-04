@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RequisitionViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UITextField *myTextField;
-- (IBAction)myTFEditEnd:(id)sender;
+
+-(void) setDate: (NSDate*) date;
 
 @end

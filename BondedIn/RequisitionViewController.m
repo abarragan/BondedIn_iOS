@@ -8,7 +8,11 @@
 
 #import "RequisitionViewController.h"
 
-@interface RequisitionViewController ()
+@interface RequisitionViewController () {
+    NSDate* model;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 
 @end
 
@@ -23,11 +27,20 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.title = @"Requisition";
+    self.detailLabel.text = [model description];
+
 }
+
+-(void) setDate: (NSDate*) date {
+    model = date;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -35,6 +48,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)myTFEditEnd:(id)sender {
-}
 @end
