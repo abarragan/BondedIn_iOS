@@ -9,8 +9,12 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import "RequisitionViewController.h"
 
-@interface MasterViewController ()
+@interface MasterViewController () {
+    NSIndexPath* detailIndex;
+}
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
@@ -58,6 +62,10 @@
 }
 
 #pragma mark - Table View
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    detailIndex = indexPath;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -111,6 +119,9 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
+    } else {
+        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath: detailIndex];
+        [[[segue destinationViewController] myTextField] setText:[[object valueForKey:@"timeStamp"] description]];
     }
 }
 

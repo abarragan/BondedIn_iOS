@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE884531182422B10036CA99 /* RequisitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE884530182422B10036CA99 /* RequisitionViewController.m */; };
 		BE9985F81823F67C00E30AD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F71823F67C00E30AD5 /* UIKit.framework */; };
 		BE9985FA1823F67C00E30AD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F91823F67C00E30AD5 /* Foundation.framework */; };
 		BE9985FC1823F67C00E30AD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985FB1823F67C00E30AD5 /* CoreGraphics.framework */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE88452F182422B10036CA99 /* RequisitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequisitionViewController.h; sourceTree = "<group>"; };
+		BE884530182422B10036CA99 /* RequisitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequisitionViewController.m; sourceTree = "<group>"; };
 		BE9985F41823F67C00E30AD5 /* BondedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BondedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9985F71823F67C00E30AD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE9985F91823F67C00E30AD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,6 +104,8 @@
 				BE99861B1823F67D00E30AD5 /* DetailViewController.m */,
 				BE9986141823F67D00E30AD5 /* BondedIn.xcdatamodeld */,
 				BE9986001823F67C00E30AD5 /* Supporting Files */,
+				BE88452F182422B10036CA99 /* RequisitionViewController.h */,
+				BE884530182422B10036CA99 /* RequisitionViewController.m */,
 			);
 			path = BondedIn;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				BE9986161823F67D00E30AD5 /* BondedIn.xcdatamodeld in Sources */,
 				BE9986191823F67D00E30AD5 /* MasterViewController.m in Sources */,
 				BE99861C1823F67D00E30AD5 /* DetailViewController.m in Sources */,
+				BE884531182422B10036CA99 /* RequisitionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +317,7 @@
 				BE9986211823F67D00E30AD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
