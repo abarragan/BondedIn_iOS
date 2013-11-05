@@ -10,6 +10,7 @@
 
 #import "DetailViewController.h"
 #import "RequisitionViewController.h"
+#import "Requisition.h"
 
 @interface MasterViewController () {
     NSIndexPath* detailIndex;
@@ -19,6 +20,8 @@
 @end
 
 @implementation MasterViewController
+
+@synthesize requisitions;
 
 - (void)awakeFromNib
 {
@@ -33,6 +36,7 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+         
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,7 +53,7 @@
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    [newManagedObject setValue:@"ddd" forKey:@"name"];
     
     // Save the context.
     NSError *error = nil;
@@ -69,13 +73,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     return [sectionInfo numberOfObjects];
+   // return[self.requisitions count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -134,6 +139,27 @@
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Requisition"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
+                                                                   ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc]
+                                                             initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext
+                                                             sectionNameKeyPath:nil cacheName:nil];
+    self.fetchedResultsController = aFetchedResultsController;
+	NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+	    NSLog(@"Core data error %@, %@", error, [error userInfo]);
+	    abort();
+	}    
+    
+   /* NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
@@ -159,7 +185,7 @@
 	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
 	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	    abort();
-	}
+	}*/
     
     return _fetchedResultsController;
 }    
@@ -214,6 +240,11 @@
     [self.tableView endUpdates];
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    return 80;
+}
+
 /*
 // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
  
@@ -225,9 +256,16 @@
  */
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
+{    
+    //Style text -detailText
+    cell.contentView.backgroundColor = self.tableView.backgroundColor;
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    
+
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    cell.textLabel.text = [[object valueForKey:@"name"] description];
+    cell.detailTextLabel.text = @"Hols";//[[object valueForKey:@"briefDescription"] description];
 }
 
 @end
