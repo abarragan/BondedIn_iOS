@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		BE884531182422B10036CA99 /* RequisitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE884530182422B10036CA99 /* RequisitionViewController.m */; };
+		BE8D48B218282D610096639E /* Technology.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48B118282D610096639E /* Technology.m */; };
+		BE8D48B518282D750096639E /* Requisition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48B418282D750096639E /* Requisition.m */; };
+		BE8D48B818282D880096639E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48B718282D880096639E /* Location.m */; };
+		BE8D48BB18282D9A0096639E /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48BA18282D9A0096639E /* Profile.m */; };
+		BE8D48BE18282DCB0096639E /* Fit.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48BD18282DCB0096639E /* Fit.m */; };
+		BE8D48C118282E030096639E /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48C018282E030096639E /* Note.m */; };
 		BE9985F81823F67C00E30AD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F71823F67C00E30AD5 /* UIKit.framework */; };
 		BE9985FA1823F67C00E30AD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F91823F67C00E30AD5 /* Foundation.framework */; };
 		BE9985FC1823F67C00E30AD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985FB1823F67C00E30AD5 /* CoreGraphics.framework */; };
@@ -27,6 +33,18 @@
 /* Begin PBXFileReference section */
 		BE88452F182422B10036CA99 /* RequisitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequisitionViewController.h; sourceTree = "<group>"; };
 		BE884530182422B10036CA99 /* RequisitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequisitionViewController.m; sourceTree = "<group>"; };
+		BE8D48B018282D610096639E /* Technology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Technology.h; sourceTree = "<group>"; };
+		BE8D48B118282D610096639E /* Technology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Technology.m; sourceTree = "<group>"; };
+		BE8D48B318282D750096639E /* Requisition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Requisition.h; sourceTree = "<group>"; };
+		BE8D48B418282D750096639E /* Requisition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Requisition.m; sourceTree = "<group>"; };
+		BE8D48B618282D880096639E /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		BE8D48B718282D880096639E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		BE8D48B918282D9A0096639E /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		BE8D48BA18282D9A0096639E /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		BE8D48BC18282DCB0096639E /* Fit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fit.h; sourceTree = "<group>"; };
+		BE8D48BD18282DCB0096639E /* Fit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fit.m; sourceTree = "<group>"; };
+		BE8D48BF18282E030096639E /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		BE8D48C018282E030096639E /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		BE9985F41823F67C00E30AD5 /* BondedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BondedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9985F71823F67C00E30AD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE9985F91823F67C00E30AD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -64,6 +82,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE8D48AF18282D460096639E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE8D48B018282D610096639E /* Technology.h */,
+				BE8D48B118282D610096639E /* Technology.m */,
+				BE8D48B318282D750096639E /* Requisition.h */,
+				BE8D48B418282D750096639E /* Requisition.m */,
+				BE8D48B618282D880096639E /* Location.h */,
+				BE8D48B718282D880096639E /* Location.m */,
+				BE8D48B918282D9A0096639E /* Profile.h */,
+				BE8D48BA18282D9A0096639E /* Profile.m */,
+				BE8D48BC18282DCB0096639E /* Fit.h */,
+				BE8D48BD18282DCB0096639E /* Fit.m */,
+				BE8D48BF18282E030096639E /* Note.h */,
+				BE8D48C018282E030096639E /* Note.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		BE9985EB1823F67C00E30AD5 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +132,7 @@
 		BE9985FF1823F67C00E30AD5 /* BondedIn */ = {
 			isa = PBXGroup;
 			children = (
+				BE8D48AF18282D460096639E /* Model */,
 				BE9986081823F67C00E30AD5 /* AppDelegate.h */,
 				BE9986091823F67C00E30AD5 /* AppDelegate.m */,
 				BE9986111823F67D00E30AD5 /* MainStoryboard.storyboard */,
@@ -195,6 +233,12 @@
 				BE9986191823F67D00E30AD5 /* MasterViewController.m in Sources */,
 				BE99861C1823F67D00E30AD5 /* DetailViewController.m in Sources */,
 				BE884531182422B10036CA99 /* RequisitionViewController.m in Sources */,
+				BE8D48B218282D610096639E /* Technology.m in Sources */,
+				BE8D48B518282D750096639E /* Requisition.m in Sources */,
+				BE8D48B818282D880096639E /* Location.m in Sources */,
+				BE8D48BB18282D9A0096639E /* Profile.m in Sources */,
+				BE8D48BE18282DCB0096639E /* Fit.m in Sources */,
+				BE8D48C118282E030096639E /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
