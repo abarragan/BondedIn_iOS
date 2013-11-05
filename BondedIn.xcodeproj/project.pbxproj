@@ -28,6 +28,7 @@
 		BE9986161823F67D00E30AD5 /* BondedIn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE9986141823F67D00E30AD5 /* BondedIn.xcdatamodeld */; };
 		BE9986191823F67D00E30AD5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9986181823F67D00E30AD5 /* MasterViewController.m */; };
 		BE99861C1823F67D00E30AD5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99861B1823F67D00E30AD5 /* DetailViewController.m */; };
+		BEA6324F182934B3004DD0E8 /* SelectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA6324E18293496004DD0E8 /* SelectionListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		BE9986181823F67D00E30AD5 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		BE99861A1823F67D00E30AD5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		BE99861B1823F67D00E30AD5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		BEA6324D18293495004DD0E8 /* SelectionListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionListViewController.h; sourceTree = "<group>"; };
+		BEA6324E18293496004DD0E8 /* SelectionListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				BE9986001823F67C00E30AD5 /* Supporting Files */,
 				BE88452F182422B10036CA99 /* RequisitionViewController.h */,
 				BE884530182422B10036CA99 /* RequisitionViewController.m */,
+				BEA6324D18293495004DD0E8 /* SelectionListViewController.h */,
+				BEA6324E18293496004DD0E8 /* SelectionListViewController.m */,
 			);
 			path = BondedIn;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				BE8D48BB18282D9A0096639E /* Profile.m in Sources */,
 				BE8D48BE18282DCB0096639E /* Fit.m in Sources */,
 				BE8D48C118282E030096639E /* Note.m in Sources */,
+				BEA6324F182934B3004DD0E8 /* SelectionListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

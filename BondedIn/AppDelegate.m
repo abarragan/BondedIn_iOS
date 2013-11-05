@@ -28,68 +28,95 @@
     controller.managedObjectContext = self.managedObjectContext;
     
     //----------------------------Data example----------------------------------//
+    BOOL wasCreatedDataCore = [[NSUserDefaults standardUserDefaults] boolForKey:@"wasCreatedDataCore"];
     
-    //REQUISITIONS//
-   /* NSManagedObjectContext *context = [self managedObjectContext];
-    Requisition *requisition = [NSEntityDescription
-                                  insertNewObjectForEntityForName:@"Requisition"
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"wasCreatedDataCore"]){
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setBool:YES forKey:@"wasCreatedDataCore"];
+        
+        //REQUISITIONS//
+        NSManagedObjectContext *context = [self managedObjectContext];
+        Requisition *requisition = [NSEntityDescription
+                                    insertNewObjectForEntityForName:@"Requisition"
+                                    inManagedObjectContext:context];
+        
+        requisition.name= @"Java Script Team Lead";
+        requisition.briefDescription=@"TDevSpark is seeking a self-motivated and proactive Javascript Team Lead to lead a new team to work with a cloud-based education company based in New York...";
+        requisition = [NSEntityDescription
+                       insertNewObjectForEntityForName:@"Requisition"
+                       inManagedObjectContext:context];
+        
+        
+        //LOCATION//
+        Location*location = [NSEntityDescription
+                             insertNewObjectForEntityForName:@"Location"
+                             inManagedObjectContext:context];
+        location.name=@"Buenos Aires";
+        location = [NSEntityDescription
+                    insertNewObjectForEntityForName:@"Location"
+                    inManagedObjectContext:context];
+        location.name=@"Cordoba";
+        location = [NSEntityDescription
+                    insertNewObjectForEntityForName:@"Location"
+                    inManagedObjectContext:context];
+        location.name=@"Entre rios";
+
+        
+        //TECHNOLOGY//
+        Technology *technology = [NSEntityDescription
+                                  insertNewObjectForEntityForName:@"Technology"
                                   inManagedObjectContext:context];
-    
-    requisition.name= @"Java Script Team Lead";
-    requisition.briefDescription=@"TDevSpark is seeking a self-motivated and proactive Javascript Team Lead to lead a new team to work with a cloud-based education company based in New York...";
-    
-    //LOCATION//
-    Location*location = [NSEntityDescription
-                         insertNewObjectForEntityForName:@"Location"
-                         inManagedObjectContext:context];
-    location.name=@"Buenos Aires";
-    
-    //TECHNOLOGY//
-    Technology *technology = [NSEntityDescription
-                              insertNewObjectForEntityForName:@"Technology"
-                              inManagedObjectContext:context];
-    technology.name=@"Java";
-    
-    //PROFILE//
-    Profile *profile = [NSEntityDescription
-                        insertNewObjectForEntityForName:@"Profile"
-                        inManagedObjectContext:context];
-    profile.firstName=@"Esteban";
-    profile.lastName=@"Roodil";
-    profile.company= @"Devspark";
-    profile.province=@"Santa Fe";
-    profile.city=@"Rosario";
-    profile.phone=[NSNumber numberWithInt:1232656545];
-    profile.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mprx/0_9r8JGG3OmpMl-Jvn9nr6G8t1ayOgKJqnNtNQG88aAMoS7gi9s9Kzuhqhh-YC1Ozsc1CFDFtcxJTw";
-    profile.publicProfileUrl=@"http://www.linkedin.com/in/estebanrodil";
-    
-    //RELATIONS//
-    location.locationRequisition=requisition;
-    technology.technologyRequisition=requisition;
-    requisition.requisitionLocation=location;
-    requisition.requisitionTechnology=technology;
-    
-    
-    NSError *error;
-    if (![context save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        technology.name=@"Java";
+        technology = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Technology"
+                      inManagedObjectContext:context];
+        technology.name=@"Java Script";
+        technology = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Technology"
+                      inManagedObjectContext:context];
+        technology.name=@"Android";
+        
+        //PROFILE//
+        Profile *profile = [NSEntityDescription
+                            insertNewObjectForEntityForName:@"Profile"
+                            inManagedObjectContext:context];
+        profile.firstName=@"Esteban";
+        profile.lastName=@"Roodil";
+        profile.company= @"Devspark";
+        profile.province=@"Santa Fe";
+        profile.city=@"Rosario";
+        profile.phone=[NSNumber numberWithInt:1232656545];
+        profile.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mprx/0_9r8JGG3OmpMl-Jvn9nr6G8t1ayOgKJqnNtNQG88aAMoS7gi9s9Kzuhqhh-YC1Ozsc1CFDFtcxJTw";
+        profile.publicProfileUrl=@"http://www.linkedin.com/in/estebanrodil";
+        
+        //RELATIONS//
+        location.locationRequisition=requisition;
+        technology.technologyRequisition=requisition;
+        requisition.requisitionLocation=location;
+        requisition.requisitionTechnology=technology;
+        
+        
+        NSError *error;
+        if (![context save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        
+        ///----------------------------SELECT----------------------------------//
+        // Test listing all FailedBankInfos from the store
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Requisitions"
+                                                  inManagedObjectContext:context];
+        [fetchRequest setEntity:entity];
+        /*  NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+         for (Requisition *requisition in fetchedObjects) {
+         NSLog(@"Name: %@", requisition.name);
+         Location *location = requisition.requisitionLocation;
+         NSLog(@"Name Location: %@", location.name);
+         Technology *technology = requisition.requisitionTechnology;
+         NSLog(@"Name Technology: %@", technology.name);
+         }*/
     }
-    
-    ///----------------------------SELECT----------------------------------//
-    // Test listing all FailedBankInfos from the store
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Requisitions"
-                                              inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (Requisition *requisition in fetchedObjects) {
-        NSLog(@"Name: %@", requisition.name);
-        Location *location = requisition.requisitionLocation;
-        NSLog(@"Name Location: %@", location.name);
-        Technology *technology = requisition.requisitionTechnology;
-        NSLog(@"Name Technology: %@", technology.name);
-    }*/
-    
     return YES;
 }
 

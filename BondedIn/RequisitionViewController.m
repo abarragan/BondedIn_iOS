@@ -48,10 +48,10 @@
 {
     if ([[segue identifier] isEqualToString:@"viewTechnologies"]) {
         // TODO: Next line should call method from SelectListViewController and set corresponding variables respecting Technologies 
-        [[segue destinationViewController] setArray:technologies andSetOperatingTable:@"Technology" withColumn:@"Name"];
+        [[segue destinationViewController] setArray:technologies andSetOperatedTable:@"Technology" andSetColumn:@"Name"];
     } else if ([[segue identifier] isEqualToString:@"viewLocations"]){
         // TODO: Next line should call method from SelectListViewController and set corresponding variables respecting Locations
-        [[segue destinationViewController] setArray:locations andSetOperatingTable:@"Location" withColumn:@"Name"];
+        [[segue destinationViewController] setArray:locations andSetOperatedTable:@"Location" andSetColumn:@"Name"];
     }
 }
 
