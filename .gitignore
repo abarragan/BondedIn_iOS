@@ -1,0 +1,20 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+# XCode related files
+xcuserdata/
+# Build related
+###############
+target/
+/dist/
+/build/
+/Pods/
+boundedin.xcworkspace/contents.xcworkspacedata
+boundedin.xcworkspace/xcuserdata/*
+boundedin/boundedin.xcodeproj/xcuserdata/*
+boundedin/Lib/WL_Library/WL_Library.xcodeproj/xcuserdata/*
+boundedin/Lib/QPWidgets/QPWidgets.xcodeproj/xcuserdata/*
+Podfile.lock
+BuildUserConfig.xcconfig
