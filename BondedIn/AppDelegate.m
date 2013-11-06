@@ -13,6 +13,7 @@
 #import "Requisition.h"
 #import "Location.h"
 #import "Profile.h"
+#import "Fit.h"
 
 @implementation AppDelegate
 
@@ -28,7 +29,6 @@
     controller.managedObjectContext = self.managedObjectContext;
     
     //----------------------------Data example ONLY TO TEST----------------------------------//
-    BOOL wasCreatedDataCore = [[NSUserDefaults standardUserDefaults] boolForKey:@"wasCreatedDataCore"];
     
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"wasCreatedDataCore"]){
         
@@ -42,56 +42,136 @@
                                     inManagedObjectContext:context];
         
         requisition.name= @"Java Script Team Lead";
-        requisition.briefDescription=@"TDevSpark is seeking a self-motivated and proactive Javascript Team Lead to lead a new team to work with a cloud-based education company based in New York...";
-                
+        requisition.briefDescription=@"DevSpark is seeking a Javascript Team Lead";
+        
         //LOCATION//
-        Location*location = [NSEntityDescription
-                             insertNewObjectForEntityForName:@"Location"
-                             inManagedObjectContext:context];
-        location.name=@"Buenos Aires";
-        location = [NSEntityDescription
-                    insertNewObjectForEntityForName:@"Location"
-                    inManagedObjectContext:context];
-        location.name=@"Cordoba";
-        location = [NSEntityDescription
-                    insertNewObjectForEntityForName:@"Location"
-                    inManagedObjectContext:context];
-        location.name=@"Entre rios";
-
+        Location *location1 = [NSEntityDescription
+                               insertNewObjectForEntityForName:@"Location"
+                               inManagedObjectContext:context];
+        
+        location1.province= @"Buenos Aires";
+        location1.city = @"Tandil";
+        
+        Location *location2 = [NSEntityDescription
+                               insertNewObjectForEntityForName:@"Location"
+                               inManagedObjectContext:context];
+        
+        location2.province= @"Cordoba";
+        location2.city = @"Cordoba";
+        
+        Location *location3 = [NSEntityDescription
+                               insertNewObjectForEntityForName:@"Location"
+                               inManagedObjectContext:context];
+        
+        location3.province= @"Mendoza";
+        location3.city = @"San Rafael";
+        
+        Location *location4 = [NSEntityDescription
+                               insertNewObjectForEntityForName:@"Location"
+                               inManagedObjectContext:context];
+        
+        location4.province= @"Rio Negro";
+        location4.city = @"Bariloche";
+        
         
         //TECHNOLOGY//
-        Technology *technology = [NSEntityDescription
+        Technology *technology1 = [NSEntityDescription
                                   insertNewObjectForEntityForName:@"Technology"
                                   inManagedObjectContext:context];
-        technology.name=@"Java";
-        technology = [NSEntityDescription
-                      insertNewObjectForEntityForName:@"Technology"
-                      inManagedObjectContext:context];
-        technology.name=@"Java Script";
-        technology = [NSEntityDescription
-                      insertNewObjectForEntityForName:@"Technology"
-                      inManagedObjectContext:context];
-        technology.name=@"Android";
+        
+        technology1.name= @"Java";
+        
+        Technology *technology2 = [NSEntityDescription
+                                  insertNewObjectForEntityForName:@"Technology"
+                                  inManagedObjectContext:context];
+        
+        technology2.name= @"Ruby";
+        
+        Technology *technology3 = [NSEntityDescription
+                                  insertNewObjectForEntityForName:@"Technology"
+                                  inManagedObjectContext:context];
+        
+        technology3.name= @"JS";
+        
+        Technology *technology4 = [NSEntityDescription
+                                  insertNewObjectForEntityForName:@"Technology"
+                                  inManagedObjectContext:context];
+        
+        technology4.name= @"iOS";
+        
+        Technology *technology5 = [NSEntityDescription
+                                  insertNewObjectForEntityForName:@"Technology"
+                                  inManagedObjectContext:context];
+        
+        technology5.name= @"Android";
         
         //PROFILE//
-        Profile *profile = [NSEntityDescription
-                            insertNewObjectForEntityForName:@"Profile"
-                            inManagedObjectContext:context];
-        profile.firstName=@"Esteban";
-        profile.lastName=@"Roodil";
-        profile.company= @"Devspark";
-        profile.province=@"Santa Fe";
-        profile.city=@"Rosario";
-        profile.phone=[NSNumber numberWithInt:1232656545];
-        profile.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mprx/0_9r8JGG3OmpMl-Jvn9nr6G8t1ayOgKJqnNtNQG88aAMoS7gi9s9Kzuhqhh-YC1Ozsc1CFDFtcxJTw";
-        profile.publicProfileUrl=@"http://www.linkedin.com/in/estebanrodil";
+        Profile *profile1 = [NSEntityDescription
+                             insertNewObjectForEntityForName:@"Profile"
+                             inManagedObjectContext:context];
+        profile1.firstName=@"Esteban";
+        profile1.lastName=@"Roodil";
+        profile1.company= @"Devspark";
+        profile1.province=@"Santa Fe";
+        profile1.city=@"Rosario";
+        profile1.phone=[NSNumber numberWithInt:1232656545];
+        profile1.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mprx/0_9r8JGG3OmpMl-Jvn9nr6G8t1ayOgKJqnNtNQG88aAMoS7gi9s9Kzuhqhh-YC1Ozsc1CFDFtcxJTw";
+        profile1.publicProfileUrl=@"http://www.linkedin.com/in/estebanrodil";
         
-        //RELATIONS//
-        location.locationRequisition=requisition;
-        technology.technologyRequisition=requisition;
-        requisition.requisitionLocation=location;
-        requisition.requisitionTechnology=technology;
         
+        Profile *profile2 = [NSEntityDescription
+                             insertNewObjectForEntityForName:@"Profile"
+                             inManagedObjectContext:context];
+        profile2.firstName=@"Raul";
+        profile2.lastName=@"Roodil";
+        profile2.company= @"Devspark";
+        profile2.province=@"Santa Fe";
+        profile2.city=@"Rosario";
+        profile2.phone=[NSNumber numberWithInt:1232656545];
+        profile2.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mprx/0_9r8JGG3OmpMl-Jvn9nr6G8t1ayOgKJqnNtNQG88aAMoS7gi9s9Kzuhqhh-YC1Ozsc1CFDFtcxJTw";
+        profile2.publicProfileUrl=@"http://www.linkedin.com/in/estebanrodil";
+        
+        Profile *profile3 = [NSEntityDescription
+                             insertNewObjectForEntityForName:@"Profile"
+                             inManagedObjectContext:context];
+        profile3.firstName=@"Pedro";
+        profile3.lastName=@"Roodil";
+        profile3.company= @"Devspark";
+        profile3.province=@"Santa Fe";
+        profile3.city=@"Rosario";
+        profile3.phone=[NSNumber numberWithInt:1232656545];
+        profile3.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mprx/0_9r8JGG3OmpMl-Jvn9nr6G8t1ayOgKJqnNtNQG88aAMoS7gi9s9Kzuhqhh-YC1Ozsc1CFDFtcxJTw";
+        profile3.publicProfileUrl=@"http://www.linkedin.com/in/estebanrodil";
+        
+        //FIT//
+        Fit *fit1 = [NSEntityDescription
+                     insertNewObjectForEntityForName:@"Fit"
+                     inManagedObjectContext:context];
+        
+        fit1.status= @"Favorites";
+        fit1.fitProfile=profile1;
+        
+        Fit *fit2 = [NSEntityDescription
+                     insertNewObjectForEntityForName:@"Fit"
+                     inManagedObjectContext:context];
+        
+        fit2.status= @"Deleted";
+        fit2.fitProfile=profile2;
+        
+        Fit *fit3 = [NSEntityDescription
+                     insertNewObjectForEntityForName:@"Fit"
+                     inManagedObjectContext:context];
+        
+        fit3.status= @"New Search";
+        fit3.fitProfile=profile3;
+        
+        ///RELATIONS//
+        [requisition addRequisitionLocationObject:location1];
+        [requisition addRequisitionLocationObject:location2];
+        [requisition addRequisitionTechnologyObject: technology1];
+        [requisition addRequisitionFitObject: fit1];
+        [requisition addRequisitionFitObject: fit2];
+        [requisition addRequisitionFitObject: fit3];
         
         NSError *error;
         if (![context save:&error]) {

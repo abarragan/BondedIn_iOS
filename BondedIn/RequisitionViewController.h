@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Requisition.h"
 
-@interface RequisitionViewController : UIViewController
+#define TECHNOLOGY_SECTION 0
+#define LOCATION_SECTION 1
 
--(void) setDate: (NSDate*) date;
+@interface RequisitionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+
+@property (strong, nonatomic) Requisition* requisition;
+
+
+-(void) setRequisition: (Requisition*) openedRequisition;
 
 @end

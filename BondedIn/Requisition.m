@@ -2,23 +2,22 @@
 //  Requisition.m
 //  BondedIn
 //
-//  Created by Silvio Jaureguibehere on 11/4/13.
+//  Created by Silvio Jaureguibehere on 11/7/13.
 //
 //
 
 #import "Requisition.h"
-#import "Technology.h"
-#import "Location.h"
 #import "Fit.h"
-
+#import "Location.h"
+#import "Technology.h"
 
 
 @implementation Requisition
 
-@dynamic name;
 @dynamic briefDescription;
-@dynamic requisitionTechnology;
-@dynamic requisitionLocation;
+@dynamic name;
 @dynamic requisitionFit;
+@dynamic requisitionLocation;
+@dynamic requisitionTechnology;
 
 @end

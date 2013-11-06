@@ -2,7 +2,7 @@
 //  Profile.m
 //  BondedIn
 //
-//  Created by Silvio Jaureguibehere on 11/4/13.
+//  Created by Silvio Jaureguibehere on 11/7/13.
 //
 //
 
@@ -12,14 +12,14 @@
 
 @implementation Profile
 
+@dynamic city;
+@dynamic company;
 @dynamic firstName;
 @dynamic lastName;
-@dynamic company;
-@dynamic province;
-@dynamic city;
-@dynamic phone;
 @dynamic mail;
+@dynamic phone;
 @dynamic pictureUrl;
+@dynamic province;
 @dynamic publicProfileUrl;
 @dynamic profileFit;
 

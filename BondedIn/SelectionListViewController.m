@@ -5,8 +5,13 @@
 //
 
 #import "SelectionListViewController.h"
+#import "Location.h"
+#import "AppDelegate.h"
 
 @interface SelectionListViewController ()
+
+@property (nonatomic, strong) NSMutableArray* rows;
+@property (nonatomic, strong) NSMutableArray* selectedRows;
 
 @end
 
@@ -21,12 +26,22 @@
     return self;
 }
 
-- (void)setArray:(NSArray*) selectedItems andSetOperatingTable:(NSString*) table withColumn:(NSString*) column{}
-
+- (void)setArray:(NSMutableArray*) selectedItems andSetOperatingTable:(NSString*) table withColumn:(NSString*) column
+{
+    self.selectedRows = selectedItems;
+    
+    self.title = table;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    NSManagedObjectContext* context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    NSEntityDescription* entity = [NSEntityDescription entityForName:self.title inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    self.rows = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -45,25 +60,37 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.rows.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"ListCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] init];
+    }
     
-    // Configure the cell...
+    if ([self.title isEqualToString: @"Technology"]){
+        cell.textLabel.text = [[self.rows objectAtIndex:indexPath.item]  name];
+    }
+    else if ([self.title isEqualToString: @"Location"]) {
+        cell.textLabel.text = [[self.rows objectAtIndex:indexPath.item]  city];
+    }
     
+    
+    id object = [self.rows objectAtIndex:indexPath.item];
+    
+    if ([self.selectedRows containsObject:object]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else 
+        cell.accessoryType = UITableViewCellAccessoryNone;
     return cell;
 }
 
@@ -117,6 +144,16 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    
+    id object = [self.rows objectAtIndex:indexPath.item];
+    
+    if ([self.selectedRows containsObject:object]) {
+        [self.selectedRows removeObjectIdenticalTo:object];
+    }
+    else {
+        [self.selectedRows addObject:object];
+    }
+    [self.tableView reloadData];
 }
 
 @end

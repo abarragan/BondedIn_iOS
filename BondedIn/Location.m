@@ -2,7 +2,7 @@
 //  Location.m
 //  BondedIn
 //
-//  Created by Silvio Jaureguibehere on 11/4/13.
+//  Created by Silvio Jaureguibehere on 11/7/13.
 //
 //
 
@@ -12,7 +12,8 @@
 
 @implementation Location
 
-@dynamic name;
+@dynamic province;
+@dynamic city;
 @dynamic locationRequisition;
 
 @end
