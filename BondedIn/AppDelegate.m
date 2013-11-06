@@ -27,7 +27,7 @@
     MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     
-    //----------------------------Data example----------------------------------//
+    //----------------------------Data example ONLY TO TEST----------------------------------//
     BOOL wasCreatedDataCore = [[NSUserDefaults standardUserDefaults] boolForKey:@"wasCreatedDataCore"];
     
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"wasCreatedDataCore"]){
@@ -43,11 +43,7 @@
         
         requisition.name= @"Java Script Team Lead";
         requisition.briefDescription=@"TDevSpark is seeking a self-motivated and proactive Javascript Team Lead to lead a new team to work with a cloud-based education company based in New York...";
-        requisition = [NSEntityDescription
-                       insertNewObjectForEntityForName:@"Requisition"
-                       inManagedObjectContext:context];
-        
-        
+                
         //LOCATION//
         Location*location = [NSEntityDescription
                              insertNewObjectForEntityForName:@"Location"
@@ -102,20 +98,7 @@
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }
         
-        ///----------------------------SELECT----------------------------------//
-        // Test listing all FailedBankInfos from the store
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Requisitions"
-                                                  inManagedObjectContext:context];
-        [fetchRequest setEntity:entity];
-        /*  NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-         for (Requisition *requisition in fetchedObjects) {
-         NSLog(@"Name: %@", requisition.name);
-         Location *location = requisition.requisitionLocation;
-         NSLog(@"Name Location: %@", location.name);
-         Technology *technology = requisition.requisitionTechnology;
-         NSLog(@"Name Technology: %@", technology.name);
-         }*/
+        ///------------------------------------------------------------------------//
     }
     return YES;
 }
