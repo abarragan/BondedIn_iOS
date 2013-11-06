@@ -10,6 +10,6 @@
 
 @interface SelectionListViewController : UITableViewController
 
-- (void)setArray:(NSArray*) selectedItems andSetOperatedTable:(NSString*) table andSetColumn:(NSString*) column;
+- (void)setArray:(NSArray*) selectedItems andSetOperatingTable:(NSString*) table withColumn:(NSString*) column;
 
 @end

@@ -21,7 +21,7 @@
     return self;
 }
 
-- (void)setArray:(NSArray*) selectedItems andSetOperatedTable:(NSString*) table andSetColumn:(NSString*) column{}
+- (void)setArray:(NSArray*) selectedItems andSetOperatingTable:(NSString*) table withColumn:(NSString*) column{}
 
 
 - (void)viewDidLoad
