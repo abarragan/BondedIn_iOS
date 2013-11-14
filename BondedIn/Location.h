@@ -2,7 +2,7 @@
 //  Location.h
 //  BondedIn
 //
-//  Created by Silvio Jaureguibehere on 11/4/13.
+//  Created by Silvio Jaureguibehere on 11/6/13.
 //
 //
 
@@ -14,6 +14,14 @@
 @interface Location : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) Requisition *locationRequisition;
+@property (nonatomic, retain) NSSet *locationRequisition;
+@end
+
+@interface Location (CoreDataGeneratedAccessors)
+
+- (void)addLocationRequisitionObject:(Requisition *)value;
+- (void)removeLocationRequisitionObject:(Requisition *)value;
+- (void)addLocationRequisition:(NSSet *)values;
+- (void)removeLocationRequisition:(NSSet *)values;
 
 @end

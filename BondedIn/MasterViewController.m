@@ -8,7 +8,7 @@
 
 #import "MasterViewController.h"
 
-#import "DetailViewController.h"
+#import "TabBarViewController.h"
 #import "RequisitionViewController.h"
 #import "Requisition.h"
 
@@ -37,8 +37,6 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    
-         
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,7 +56,7 @@
                                 inManagedObjectContext:context];
     
     requisition.name= @"Android Developer";
-    requisition.briefDescription=@"T...";
+    requisition.briefDescription=@"DevSpark is seeking a...";
     
     // Save the context.
     NSError *error = nil;
@@ -92,7 +90,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{  
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
@@ -127,19 +125,20 @@
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // The table view should not be re-orderable.
-    return NO;
+    return NO; 
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"viewResults"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        Requisition *requisition = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setRequisitionItem:requisition];
     } else {
       //  NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath: detailIndex];
      //   [[[segue destinationViewController] myTextField] setText:[[object valueForKey:@"timeStamp"] description]];
     }
+   
 }
 
 #pragma mark - Fetched results controller	
@@ -229,7 +228,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    return 40;
+    return 60;
 }
 
 
@@ -238,11 +237,13 @@
     //Style text -detailText
     cell.contentView.backgroundColor = self.tableView.backgroundColor;
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    //cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"name"] description];
     cell.detailTextLabel.text = [[object valueForKey:@"briefDescription"] description];
 }
+
+
 
 @end
