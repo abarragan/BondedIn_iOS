@@ -8,7 +8,7 @@
 
 #import "MasterViewController.h"
 
-#import "DetailViewController.h"
+#import "TabBarViewController.h"
 #import "RequisitionViewController.h"
 #import "Requisition.h"
 
@@ -204,7 +204,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    return 40;
+    return 60;
 }
 
 
