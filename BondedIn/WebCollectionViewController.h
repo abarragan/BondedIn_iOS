@@ -13,8 +13,8 @@
 
 
 -(int) urlCountInWebCollectionViewController: (WebCollectionViewController*) webViewCollectionController;
--(NSString*) webCollectionViewController: (WebCollectionViewController*) webViewCollectionController urlForIndex: (int) index;
-
+-(NSString*) webCollectionViewController: (WebCollectionViewController*) webViewCollectionController urlForIndex: (int)  index;
+ 
 @end
 
 
