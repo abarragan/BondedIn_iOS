@@ -8,54 +8,65 @@
 
 #import "RequisitionViewController.h"
 #import "SelectionListViewController.h"
+#import "Technology.h"
+#import "Location.h"
+#import "AppDelegate.h"
 
-@interface RequisitionViewController () {
-    NSDate* model;
-    NSArray* locations;
-    NSArray* technologies;
-}
+@interface RequisitionViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (strong, nonatomic) IBOutlet UITextField *nameTextField;
+@property (strong, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) NSMutableArray* locations;
+@property (strong, nonatomic) NSMutableArray* technologies;
+
+- (IBAction)doneEditing:(id)sender;
 
 @end
 
 @implementation RequisitionViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]){
+        // any custom configuration here
+        _requisition = nil;
+        _locations = [NSMutableArray array];
+        _technologies = [NSMutableArray array];
     }
     return self;
 }
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Requisition";
-    //self.detailLabel.text = [model description];
-
+    if (self.requisition == nil)
+        self.nameTextField.text = @"New Requisition";
+    [self.nameTextField resignFirstResponder];
+    [self.view endEditing:YES];
 }
 
--(void) setDate: (NSDate*) date {
-    model = date;
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(void) setRequisition: (Requisition*) openedRequisition {
+    _requisition = openedRequisition;
+    self.nameTextField.text = [self.requisition name];
+    self.technologies = [[self.requisition.requisitionTechnology allObjects] mutableCopy];
+    self.locations = [[self.requisition.requisitionLocation allObjects] mutableCopy];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"viewTechnologies"]) {
-        // TODO: Next line should call method from SelectListViewController and set corresponding variables respecting Technologies 
-        [[segue destinationViewController] setArray:technologies andSetOperatingTable:@"Technology" withColumn:@"Name"];
-    } else if ([[segue identifier] isEqualToString:@"viewLocations"]){
-        // TODO: Next line should call method from SelectListViewController and set corresponding variables respecting Locations
-        [[segue destinationViewController] setArray:locations andSetOperatingTable:@"Location" withColumn:@"Name"];
+
+    if ([[segue identifier] isEqualToString:@"technologiesList"]) {
+        [[segue destinationViewController] setArray:self.technologies andSetOperatingTable:@"Technology" withColumn:@"Name"];
+    } else if ([[segue identifier] isEqualToString:@"locationsList"]){
+        [[segue destinationViewController] setArray:self.locations andSetOperatingTable:@"Location" withColumn:@"Name"];
     }
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -63,4 +74,83 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == TECHNOLOGY_SECTION)
+        return [self.technologies count];
+    else if (section == LOCATION_SECTION)
+        return [self.locations count];
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell;
+    if (indexPath.section == TECHNOLOGY_SECTION){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"TechnologyCell" forIndexPath:indexPath];
+        cell.textLabel.text = [[self.technologies objectAtIndex:indexPath.item] name];
+    }
+    else if (indexPath.section == LOCATION_SECTION) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
+        cell.textLabel.text = [[self.locations objectAtIndex:indexPath.item] city];
+        cell.detailTextLabel.text = [[self.locations objectAtIndex:indexPath.item] province];
+    }
+    return cell;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableview reloadData];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UITableViewCell* cell;
+    
+    if (section == TECHNOLOGY_SECTION){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"TechnologiesHeaderCell"];
+    }
+    else if (section == LOCATION_SECTION) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"LocationsHeaderCell"];
+    }
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 45;
+}
+
+- (IBAction)doneEditing:(id)sender {
+    NSSet* newTechs = [NSSet setWithArray:self.technologies];
+    NSSet* newLocations = [NSSet setWithArray:self.locations];
+    
+    NSManagedObjectContext* context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    
+    if (self.requisition == nil) {
+        //NEW REQUISITION
+        _requisition = [NSEntityDescription
+                                    insertNewObjectForEntityForName:@"Requisition"
+                                    inManagedObjectContext:context];
+    } else {
+        //EDITING REQUISITION
+        //self.requisition.requisitionTechnology = nil;
+        //self.requisition.requisitionLocation = nil;
+    }
+    
+    self.requisition.name = self.nameTextField.text;
+    [self.requisition addRequisitionLocation:newLocations];
+    [self.requisition addRequisitionTechnology:newTechs];    
+    
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);	
+        abort();
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

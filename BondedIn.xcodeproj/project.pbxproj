@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BE884531182422B10036CA99 /* RequisitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE884530182422B10036CA99 /* RequisitionViewController.m */; };
-		BE8D48B218282D610096639E /* Technology.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48B118282D610096639E /* Technology.m */; };
-		BE8D48B518282D750096639E /* Requisition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48B418282D750096639E /* Requisition.m */; };
-		BE8D48B818282D880096639E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48B718282D880096639E /* Location.m */; };
-		BE8D48BB18282D9A0096639E /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48BA18282D9A0096639E /* Profile.m */; };
-		BE8D48BE18282DCB0096639E /* Fit.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48BD18282DCB0096639E /* Fit.m */; };
-		BE8D48C118282E030096639E /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D48C018282E030096639E /* Note.m */; };
 		BE9985F81823F67C00E30AD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F71823F67C00E30AD5 /* UIKit.framework */; };
 		BE9985FA1823F67C00E30AD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F91823F67C00E30AD5 /* Foundation.framework */; };
 		BE9985FC1823F67C00E30AD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985FB1823F67C00E30AD5 /* CoreGraphics.framework */; };
@@ -29,23 +23,17 @@
 		BE9986191823F67D00E30AD5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9986181823F67D00E30AD5 /* MasterViewController.m */; };
 		BE99861C1823F67D00E30AD5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99861B1823F67D00E30AD5 /* DetailViewController.m */; };
 		BEA6324F182934B3004DD0E8 /* SelectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA6324E18293496004DD0E8 /* SelectionListViewController.m */; };
+		BEF0CAFA182BF66900156661 /* Requisition.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CAF9182BF66900156661 /* Requisition.m */; };
+		BEF0CAFD182BF66A00156661 /* Technology.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CAFC182BF66A00156661 /* Technology.m */; };
+		BEF0CB00182BF66B00156661 /* Fit.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CAFF182BF66B00156661 /* Fit.m */; };
+		BEF0CB06182BF66B00156661 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CB05182BF66B00156661 /* Note.m */; };
+		BEF0CB09182BF66C00156661 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CB08182BF66C00156661 /* Profile.m */; };
+		BEF0CB0C182C1F6200156661 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CB0B182C1F6200156661 /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BE88452F182422B10036CA99 /* RequisitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequisitionViewController.h; sourceTree = "<group>"; };
 		BE884530182422B10036CA99 /* RequisitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequisitionViewController.m; sourceTree = "<group>"; };
-		BE8D48B018282D610096639E /* Technology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Technology.h; sourceTree = "<group>"; };
-		BE8D48B118282D610096639E /* Technology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Technology.m; sourceTree = "<group>"; };
-		BE8D48B318282D750096639E /* Requisition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Requisition.h; sourceTree = "<group>"; };
-		BE8D48B418282D750096639E /* Requisition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Requisition.m; sourceTree = "<group>"; };
-		BE8D48B618282D880096639E /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		BE8D48B718282D880096639E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		BE8D48B918282D9A0096639E /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
-		BE8D48BA18282D9A0096639E /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
-		BE8D48BC18282DCB0096639E /* Fit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fit.h; sourceTree = "<group>"; };
-		BE8D48BD18282DCB0096639E /* Fit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fit.m; sourceTree = "<group>"; };
-		BE8D48BF18282E030096639E /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		BE8D48C018282E030096639E /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		BE9985F41823F67C00E30AD5 /* BondedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BondedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9985F71823F67C00E30AD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE9985F91823F67C00E30AD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,6 +56,18 @@
 		BE99861B1823F67D00E30AD5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		BEA6324D18293495004DD0E8 /* SelectionListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionListViewController.h; sourceTree = "<group>"; };
 		BEA6324E18293496004DD0E8 /* SelectionListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionListViewController.m; sourceTree = "<group>"; };
+		BEF0CAF8182BF66900156661 /* Requisition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Requisition.h; sourceTree = "<group>"; };
+		BEF0CAF9182BF66900156661 /* Requisition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Requisition.m; sourceTree = "<group>"; };
+		BEF0CAFB182BF66A00156661 /* Technology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Technology.h; sourceTree = "<group>"; };
+		BEF0CAFC182BF66A00156661 /* Technology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Technology.m; sourceTree = "<group>"; };
+		BEF0CAFE182BF66B00156661 /* Fit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fit.h; sourceTree = "<group>"; };
+		BEF0CAFF182BF66B00156661 /* Fit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fit.m; sourceTree = "<group>"; };
+		BEF0CB04182BF66B00156661 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		BEF0CB05182BF66B00156661 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		BEF0CB07182BF66C00156661 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		BEF0CB08182BF66C00156661 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		BEF0CB0A182C1F6200156661 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		BEF0CB0B182C1F6200156661 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,18 +88,18 @@
 		BE8D48AF18282D460096639E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BE8D48B018282D610096639E /* Technology.h */,
-				BE8D48B118282D610096639E /* Technology.m */,
-				BE8D48B318282D750096639E /* Requisition.h */,
-				BE8D48B418282D750096639E /* Requisition.m */,
-				BE8D48B618282D880096639E /* Location.h */,
-				BE8D48B718282D880096639E /* Location.m */,
-				BE8D48B918282D9A0096639E /* Profile.h */,
-				BE8D48BA18282D9A0096639E /* Profile.m */,
-				BE8D48BC18282DCB0096639E /* Fit.h */,
-				BE8D48BD18282DCB0096639E /* Fit.m */,
-				BE8D48BF18282E030096639E /* Note.h */,
-				BE8D48C018282E030096639E /* Note.m */,
+				BEF0CAF8182BF66900156661 /* Requisition.h */,
+				BEF0CAF9182BF66900156661 /* Requisition.m */,
+				BEF0CAFB182BF66A00156661 /* Technology.h */,
+				BEF0CAFC182BF66A00156661 /* Technology.m */,
+				BEF0CAFE182BF66B00156661 /* Fit.h */,
+				BEF0CAFF182BF66B00156661 /* Fit.m */,
+				BEF0CB04182BF66B00156661 /* Note.h */,
+				BEF0CB05182BF66B00156661 /* Note.m */,
+				BEF0CB07182BF66C00156661 /* Profile.h */,
+				BEF0CB08182BF66C00156661 /* Profile.m */,
+				BEF0CB0A182C1F6200156661 /* Location.h */,
+				BEF0CB0B182C1F6200156661 /* Location.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -238,13 +238,13 @@
 				BE9986191823F67D00E30AD5 /* MasterViewController.m in Sources */,
 				BE99861C1823F67D00E30AD5 /* DetailViewController.m in Sources */,
 				BE884531182422B10036CA99 /* RequisitionViewController.m in Sources */,
-				BE8D48B218282D610096639E /* Technology.m in Sources */,
-				BE8D48B518282D750096639E /* Requisition.m in Sources */,
-				BE8D48B818282D880096639E /* Location.m in Sources */,
-				BE8D48BB18282D9A0096639E /* Profile.m in Sources */,
-				BE8D48BE18282DCB0096639E /* Fit.m in Sources */,
-				BE8D48C118282E030096639E /* Note.m in Sources */,
 				BEA6324F182934B3004DD0E8 /* SelectionListViewController.m in Sources */,
+				BEF0CAFA182BF66900156661 /* Requisition.m in Sources */,
+				BEF0CAFD182BF66A00156661 /* Technology.m in Sources */,
+				BEF0CB00182BF66B00156661 /* Fit.m in Sources */,
+				BEF0CB06182BF66B00156661 /* Note.m in Sources */,
+				BEF0CB09182BF66C00156661 /* Profile.m in Sources */,
+				BEF0CB0C182C1F6200156661 /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
