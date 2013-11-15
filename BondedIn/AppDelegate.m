@@ -239,12 +239,12 @@
         [requisition addRequisitionFitObject: fit4];
         [requisition addRequisitionFitObject: fit5];
         [requisition addRequisitionFitObject: fit6];
-      //  fit1.fitRequisition=requisition;
-     //   fit2.fitRequisition=requisition;
-    //    fit3.fitRequisition=requisition;
-    //    fit4.fitRequisition=requisition;
-    //    fit5.fitRequisition=requisition;
-     //   fit6.fitRequisition=requisition;
+        fit1.fitRequisition=requisition;
+        fit2.fitRequisition=requisition;
+        fit3.fitRequisition=requisition;
+        fit4.fitRequisition=requisition;
+        fit5.fitRequisition=requisition;
+        fit6.fitRequisition=requisition;
 
 
         

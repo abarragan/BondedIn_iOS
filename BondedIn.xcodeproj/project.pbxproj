@@ -7,7 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE8588EA18327B140098D93E /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8588E918327B130098D93E /* NoteViewController.m */; };
+		BE87C5DA182D7AAE003FA309 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE87C5D9182D7AAE003FA309 /* DetailViewController.m */; };
+		BE88419B182AD9B30053C860 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88419A182AD9B30053C860 /* Profile.m */; };
+		BE88419E182AD9B50053C860 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88419D182AD9B50053C860 /* Location.m */; };
+		BE8841A1182AD9B60053C860 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8841A0182AD9B60053C860 /* Note.m */; };
+		BE8841A4182AD9B60053C860 /* Requisition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8841A3182AD9B60053C860 /* Requisition.m */; };
+		BE8841AA182AD9B60053C860 /* Technology.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8841A9182AD9B60053C860 /* Technology.m */; };
+		BE8841AF182AE0500053C860 /* DeveloperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8841AE182AE0500053C860 /* DeveloperModel.m */; };
 		BE884531182422B10036CA99 /* RequisitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE884530182422B10036CA99 /* RequisitionViewController.m */; };
+		BE898A99183176BD00BB6E99 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE898A98183176BD00BB6E99 /* ContactViewController.m */; };
+		BE8C998C1831480500882F34 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8C998A1831480500882F34 /* MainStoryboard.storyboard */; };
+		BE8C998F1831495500882F34 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C998E1831495500882F34 /* ProfileViewController.m */; };
+		BE8E5289182D468400325707 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E5288182D468400325707 /* TabBarViewController.m */; };
+		BE8FB6F41833D02F004E9413 /* Fit.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8FB6F31833D02F004E9413 /* Fit.m */; };
 		BE9985F81823F67C00E30AD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F71823F67C00E30AD5 /* UIKit.framework */; };
 		BE9985FA1823F67C00E30AD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F91823F67C00E30AD5 /* Foundation.framework */; };
 		BE9985FC1823F67C00E30AD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985FB1823F67C00E30AD5 /* CoreGraphics.framework */; };
@@ -18,22 +31,40 @@
 		BE99860C1823F67D00E30AD5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BE99860B1823F67D00E30AD5 /* Default.png */; };
 		BE99860E1823F67D00E30AD5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE99860D1823F67D00E30AD5 /* Default@2x.png */; };
 		BE9986101823F67D00E30AD5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE99860F1823F67D00E30AD5 /* Default-568h@2x.png */; };
-		BE9986131823F67D00E30AD5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9986111823F67D00E30AD5 /* MainStoryboard.storyboard */; };
 		BE9986161823F67D00E30AD5 /* BondedIn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE9986141823F67D00E30AD5 /* BondedIn.xcdatamodeld */; };
 		BE9986191823F67D00E30AD5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9986181823F67D00E30AD5 /* MasterViewController.m */; };
-		BE99861C1823F67D00E30AD5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99861B1823F67D00E30AD5 /* DetailViewController.m */; };
+		BEA28DC01835162F006B30D5 /* WebCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28DBF1835162F006B30D5 /* WebCollectionViewController.m */; };
 		BEA6324F182934B3004DD0E8 /* SelectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA6324E18293496004DD0E8 /* SelectionListViewController.m */; };
-		BEF0CAFA182BF66900156661 /* Requisition.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CAF9182BF66900156661 /* Requisition.m */; };
-		BEF0CAFD182BF66A00156661 /* Technology.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CAFC182BF66A00156661 /* Technology.m */; };
-		BEF0CB00182BF66B00156661 /* Fit.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CAFF182BF66B00156661 /* Fit.m */; };
-		BEF0CB06182BF66B00156661 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CB05182BF66B00156661 /* Note.m */; };
-		BEF0CB09182BF66C00156661 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CB08182BF66C00156661 /* Profile.m */; };
-		BEF0CB0C182C1F6200156661 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0CB0B182C1F6200156661 /* Location.m */; };
+		BEACCB17183264DF00F1ACA1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEACCB16183264DF00F1ACA1 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE8588E818327B130098D93E /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		BE8588E918327B130098D93E /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		BE87C5D9182D7AAE003FA309 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		BE884199182AD9B20053C860 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		BE88419A182AD9B30053C860 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		BE88419C182AD9B50053C860 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		BE88419D182AD9B50053C860 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		BE88419F182AD9B60053C860 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		BE8841A0182AD9B60053C860 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		BE8841A2182AD9B60053C860 /* Requisition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Requisition.h; sourceTree = "<group>"; };
+		BE8841A3182AD9B60053C860 /* Requisition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Requisition.m; sourceTree = "<group>"; };
+		BE8841A8182AD9B60053C860 /* Technology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Technology.h; sourceTree = "<group>"; };
+		BE8841A9182AD9B60053C860 /* Technology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Technology.m; sourceTree = "<group>"; };
+		BE8841AD182AE0500053C860 /* DeveloperModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeveloperModel.h; path = ../../Desktop/BondedIn/OAuthStarterKit/DeveloperModel.h; sourceTree = "<group>"; };
+		BE8841AE182AE0500053C860 /* DeveloperModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeveloperModel.m; path = ../../Desktop/BondedIn/OAuthStarterKit/DeveloperModel.m; sourceTree = "<group>"; };
 		BE88452F182422B10036CA99 /* RequisitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequisitionViewController.h; sourceTree = "<group>"; };
 		BE884530182422B10036CA99 /* RequisitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequisitionViewController.m; sourceTree = "<group>"; };
+		BE898A97183176BD00BB6E99 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		BE898A98183176BD00BB6E99 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		BE8C998B1831480500882F34 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = BondedIn/en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		BE8C998D1831495500882F34 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		BE8C998E1831495500882F34 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		BE8E5287182D468400325707 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		BE8E5288182D468400325707 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		BE8FB6F21833D02F004E9413 /* Fit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fit.h; sourceTree = "<group>"; };
+		BE8FB6F31833D02F004E9413 /* Fit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fit.m; sourceTree = "<group>"; };
 		BE9985F41823F67C00E30AD5 /* BondedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BondedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9985F71823F67C00E30AD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE9985F91823F67C00E30AD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,26 +79,15 @@
 		BE99860B1823F67D00E30AD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BE99860D1823F67D00E30AD5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BE99860F1823F67D00E30AD5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		BE9986121823F67D00E30AD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BE9986151823F67D00E30AD5 /* BondedIn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BondedIn.xcdatamodel; sourceTree = "<group>"; };
 		BE9986171823F67D00E30AD5 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		BE9986181823F67D00E30AD5 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		BE99861A1823F67D00E30AD5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		BE99861B1823F67D00E30AD5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		BEA28DBE1835162F006B30D5 /* WebCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebCollectionViewController.h; path = ../../Downloads/WebCollectionViewController.h; sourceTree = "<group>"; };
+		BEA28DBF1835162F006B30D5 /* WebCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebCollectionViewController.m; path = ../../Downloads/WebCollectionViewController.m; sourceTree = "<group>"; };
 		BEA6324D18293495004DD0E8 /* SelectionListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionListViewController.h; sourceTree = "<group>"; };
 		BEA6324E18293496004DD0E8 /* SelectionListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionListViewController.m; sourceTree = "<group>"; };
-		BEF0CAF8182BF66900156661 /* Requisition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Requisition.h; sourceTree = "<group>"; };
-		BEF0CAF9182BF66900156661 /* Requisition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Requisition.m; sourceTree = "<group>"; };
-		BEF0CAFB182BF66A00156661 /* Technology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Technology.h; sourceTree = "<group>"; };
-		BEF0CAFC182BF66A00156661 /* Technology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Technology.m; sourceTree = "<group>"; };
-		BEF0CAFE182BF66B00156661 /* Fit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fit.h; sourceTree = "<group>"; };
-		BEF0CAFF182BF66B00156661 /* Fit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fit.m; sourceTree = "<group>"; };
-		BEF0CB04182BF66B00156661 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		BEF0CB05182BF66B00156661 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
-		BEF0CB07182BF66C00156661 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
-		BEF0CB08182BF66C00156661 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
-		BEF0CB0A182C1F6200156661 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		BEF0CB0B182C1F6200156661 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		BEACCB16183264DF00F1ACA1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEACCB17183264DF00F1ACA1 /* MessageUI.framework in Frameworks */,
 				BE9985F81823F67C00E30AD5 /* UIKit.framework in Frameworks */,
 				BE9985FA1823F67C00E30AD5 /* Foundation.framework in Frameworks */,
 				BE9985FC1823F67C00E30AD5 /* CoreGraphics.framework in Frameworks */,
@@ -88,18 +109,20 @@
 		BE8D48AF18282D460096639E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BEF0CAF8182BF66900156661 /* Requisition.h */,
-				BEF0CAF9182BF66900156661 /* Requisition.m */,
-				BEF0CAFB182BF66A00156661 /* Technology.h */,
-				BEF0CAFC182BF66A00156661 /* Technology.m */,
-				BEF0CAFE182BF66B00156661 /* Fit.h */,
-				BEF0CAFF182BF66B00156661 /* Fit.m */,
-				BEF0CB04182BF66B00156661 /* Note.h */,
-				BEF0CB05182BF66B00156661 /* Note.m */,
-				BEF0CB07182BF66C00156661 /* Profile.h */,
-				BEF0CB08182BF66C00156661 /* Profile.m */,
-				BEF0CB0A182C1F6200156661 /* Location.h */,
-				BEF0CB0B182C1F6200156661 /* Location.m */,
+				BE8841AD182AE0500053C860 /* DeveloperModel.h */,
+				BE8841AE182AE0500053C860 /* DeveloperModel.m */,
+				BE884199182AD9B20053C860 /* Profile.h */,
+				BE88419A182AD9B30053C860 /* Profile.m */,
+				BE88419C182AD9B50053C860 /* Location.h */,
+				BE88419D182AD9B50053C860 /* Location.m */,
+				BE88419F182AD9B60053C860 /* Note.h */,
+				BE8841A0182AD9B60053C860 /* Note.m */,
+				BE8841A2182AD9B60053C860 /* Requisition.h */,
+				BE8841A3182AD9B60053C860 /* Requisition.m */,
+				BE8841A8182AD9B60053C860 /* Technology.h */,
+				BE8841A9182AD9B60053C860 /* Technology.m */,
+				BE8FB6F21833D02F004E9413 /* Fit.h */,
+				BE8FB6F31833D02F004E9413 /* Fit.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -107,6 +130,7 @@
 		BE9985EB1823F67C00E30AD5 = {
 			isa = PBXGroup;
 			children = (
+				BEACCB16183264DF00F1ACA1 /* MessageUI.framework */,
 				BE9985FF1823F67C00E30AD5 /* BondedIn */,
 				BE9985F61823F67C00E30AD5 /* Frameworks */,
 				BE9985F51823F67C00E30AD5 /* Products */,
@@ -137,12 +161,22 @@
 			children = (
 				BE8D48AF18282D460096639E /* Model */,
 				BE9986081823F67C00E30AD5 /* AppDelegate.h */,
+				BE87C5D9182D7AAE003FA309 /* DetailViewController.m */,
+				BE8C998A1831480500882F34 /* MainStoryboard.storyboard */,
+				BEA28DBE1835162F006B30D5 /* WebCollectionViewController.h */,
 				BE9986091823F67C00E30AD5 /* AppDelegate.m */,
-				BE9986111823F67D00E30AD5 /* MainStoryboard.storyboard */,
-				BE9986171823F67D00E30AD5 /* MasterViewController.h */,
-				BE9986181823F67D00E30AD5 /* MasterViewController.m */,
+				BEA28DBF1835162F006B30D5 /* WebCollectionViewController.m */,
 				BE99861A1823F67D00E30AD5 /* DetailViewController.h */,
-				BE99861B1823F67D00E30AD5 /* DetailViewController.m */,
+				BE8E5288182D468400325707 /* TabBarViewController.m */,
+				BE8E5287182D468400325707 /* TabBarViewController.h */,
+				BE8588E818327B130098D93E /* NoteViewController.h */,
+				BE8588E918327B130098D93E /* NoteViewController.m */,
+				BE9986171823F67D00E30AD5 /* MasterViewController.h */,
+				BE8C998D1831495500882F34 /* ProfileViewController.h */,
+				BE898A97183176BD00BB6E99 /* ContactViewController.h */,
+				BE898A98183176BD00BB6E99 /* ContactViewController.m */,
+				BE8C998E1831495500882F34 /* ProfileViewController.m */,
+				BE9986181823F67D00E30AD5 /* MasterViewController.m */,
 				BE9986141823F67D00E30AD5 /* BondedIn.xcdatamodeld */,
 				BE9986001823F67C00E30AD5 /* Supporting Files */,
 				BE88452F182422B10036CA99 /* RequisitionViewController.h */,
@@ -156,13 +190,13 @@
 		BE9986001823F67C00E30AD5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BE9986011823F67C00E30AD5 /* BondedIn-Info.plist */,
-				BE9986021823F67C00E30AD5 /* InfoPlist.strings */,
 				BE9986051823F67C00E30AD5 /* main.m */,
 				BE9986071823F67C00E30AD5 /* BondedIn-Prefix.pch */,
+				BE9986011823F67C00E30AD5 /* BondedIn-Info.plist */,
+				BE99860F1823F67D00E30AD5 /* Default-568h@2x.png */,
 				BE99860B1823F67D00E30AD5 /* Default.png */,
 				BE99860D1823F67D00E30AD5 /* Default@2x.png */,
-				BE99860F1823F67D00E30AD5 /* Default-568h@2x.png */,
+				BE9986021823F67C00E30AD5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -221,7 +255,7 @@
 				BE99860C1823F67D00E30AD5 /* Default.png in Resources */,
 				BE99860E1823F67D00E30AD5 /* Default@2x.png in Resources */,
 				BE9986101823F67D00E30AD5 /* Default-568h@2x.png in Resources */,
-				BE9986131823F67D00E30AD5 /* MainStoryboard.storyboard in Resources */,
+				BE8C998C1831480500882F34 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,35 +270,42 @@
 				BE99860A1823F67C00E30AD5 /* AppDelegate.m in Sources */,
 				BE9986161823F67D00E30AD5 /* BondedIn.xcdatamodeld in Sources */,
 				BE9986191823F67D00E30AD5 /* MasterViewController.m in Sources */,
-				BE99861C1823F67D00E30AD5 /* DetailViewController.m in Sources */,
 				BE884531182422B10036CA99 /* RequisitionViewController.m in Sources */,
 				BEA6324F182934B3004DD0E8 /* SelectionListViewController.m in Sources */,
-				BEF0CAFA182BF66900156661 /* Requisition.m in Sources */,
-				BEF0CAFD182BF66A00156661 /* Technology.m in Sources */,
-				BEF0CB00182BF66B00156661 /* Fit.m in Sources */,
-				BEF0CB06182BF66B00156661 /* Note.m in Sources */,
-				BEF0CB09182BF66C00156661 /* Profile.m in Sources */,
-				BEF0CB0C182C1F6200156661 /* Location.m in Sources */,
+				BE88419B182AD9B30053C860 /* Profile.m in Sources */,
+				BE88419E182AD9B50053C860 /* Location.m in Sources */,
+				BE8841A1182AD9B60053C860 /* Note.m in Sources */,
+				BE8841A4182AD9B60053C860 /* Requisition.m in Sources */,
+				BE8841AA182AD9B60053C860 /* Technology.m in Sources */,
+				BE8841AF182AE0500053C860 /* DeveloperModel.m in Sources */,
+				BE8E5289182D468400325707 /* TabBarViewController.m in Sources */,
+				BE87C5DA182D7AAE003FA309 /* DetailViewController.m in Sources */,
+				BE8C998F1831495500882F34 /* ProfileViewController.m in Sources */,
+				BE898A99183176BD00BB6E99 /* ContactViewController.m in Sources */,
+				BE8588EA18327B140098D93E /* NoteViewController.m in Sources */,
+				BE8FB6F41833D02F004E9413 /* Fit.m in Sources */,
+				BEA28DC01835162F006B30D5 /* WebCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BE8C998A1831480500882F34 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE8C998B1831480500882F34 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		BE9986021823F67C00E30AD5 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BE9986031823F67C00E30AD5 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		BE9986111823F67D00E30AD5 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE9986121823F67D00E30AD5 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
