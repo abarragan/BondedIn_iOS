@@ -21,6 +21,7 @@
 		BE8C998F1831495500882F34 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C998E1831495500882F34 /* ProfileViewController.m */; };
 		BE8E5289182D468400325707 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E5288182D468400325707 /* TabBarViewController.m */; };
 		BE8FB6F41833D02F004E9413 /* Fit.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8FB6F31833D02F004E9413 /* Fit.m */; };
+		BE907A54183660120057FB93 /* WebCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE907A53183660120057FB93 /* WebCollectionViewController.m */; };
 		BE9985F81823F67C00E30AD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F71823F67C00E30AD5 /* UIKit.framework */; };
 		BE9985FA1823F67C00E30AD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F91823F67C00E30AD5 /* Foundation.framework */; };
 		BE9985FC1823F67C00E30AD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985FB1823F67C00E30AD5 /* CoreGraphics.framework */; };
@@ -33,7 +34,6 @@
 		BE9986101823F67D00E30AD5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE99860F1823F67D00E30AD5 /* Default-568h@2x.png */; };
 		BE9986161823F67D00E30AD5 /* BondedIn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE9986141823F67D00E30AD5 /* BondedIn.xcdatamodeld */; };
 		BE9986191823F67D00E30AD5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9986181823F67D00E30AD5 /* MasterViewController.m */; };
-		BEA28DC01835162F006B30D5 /* WebCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28DBF1835162F006B30D5 /* WebCollectionViewController.m */; };
 		BEA6324F182934B3004DD0E8 /* SelectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA6324E18293496004DD0E8 /* SelectionListViewController.m */; };
 		BEACCB17183264DF00F1ACA1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEACCB16183264DF00F1ACA1 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +65,8 @@
 		BE8E5288182D468400325707 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		BE8FB6F21833D02F004E9413 /* Fit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fit.h; sourceTree = "<group>"; };
 		BE8FB6F31833D02F004E9413 /* Fit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fit.m; sourceTree = "<group>"; };
+		BE907A52183660120057FB93 /* WebCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCollectionViewController.h; sourceTree = "<group>"; };
+		BE907A53183660120057FB93 /* WebCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebCollectionViewController.m; sourceTree = "<group>"; };
 		BE9985F41823F67C00E30AD5 /* BondedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BondedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9985F71823F67C00E30AD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE9985F91823F67C00E30AD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,8 +85,6 @@
 		BE9986171823F67D00E30AD5 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		BE9986181823F67D00E30AD5 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		BE99861A1823F67D00E30AD5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		BEA28DBE1835162F006B30D5 /* WebCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebCollectionViewController.h; path = ../../Downloads/WebCollectionViewController.h; sourceTree = "<group>"; };
-		BEA28DBF1835162F006B30D5 /* WebCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebCollectionViewController.m; path = ../../Downloads/WebCollectionViewController.m; sourceTree = "<group>"; };
 		BEA6324D18293495004DD0E8 /* SelectionListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionListViewController.h; sourceTree = "<group>"; };
 		BEA6324E18293496004DD0E8 /* SelectionListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionListViewController.m; sourceTree = "<group>"; };
 		BEACCB16183264DF00F1ACA1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -163,9 +163,9 @@
 				BE9986081823F67C00E30AD5 /* AppDelegate.h */,
 				BE87C5D9182D7AAE003FA309 /* DetailViewController.m */,
 				BE8C998A1831480500882F34 /* MainStoryboard.storyboard */,
-				BEA28DBE1835162F006B30D5 /* WebCollectionViewController.h */,
+				BE907A52183660120057FB93 /* WebCollectionViewController.h */,
+				BE907A53183660120057FB93 /* WebCollectionViewController.m */,
 				BE9986091823F67C00E30AD5 /* AppDelegate.m */,
-				BEA28DBF1835162F006B30D5 /* WebCollectionViewController.m */,
 				BE99861A1823F67D00E30AD5 /* DetailViewController.h */,
 				BE8E5288182D468400325707 /* TabBarViewController.m */,
 				BE8E5287182D468400325707 /* TabBarViewController.h */,
@@ -284,7 +284,7 @@
 				BE898A99183176BD00BB6E99 /* ContactViewController.m in Sources */,
 				BE8588EA18327B140098D93E /* NoteViewController.m in Sources */,
 				BE8FB6F41833D02F004E9413 /* Fit.m in Sources */,
-				BEA28DC01835162F006B30D5 /* WebCollectionViewController.m in Sources */,
+				BE907A54183660120057FB93 /* WebCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
