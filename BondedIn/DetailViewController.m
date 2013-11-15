@@ -23,10 +23,7 @@
 - (void)setDetailItems:(NSMutableArray*)newDetailItems andTypeDetail:(NSString*)typeDetail
 {
     self.typeDetail=typeDetail;
-    if (self.rows != newDetailItems) {
-        self.rows = newDetailItems;
-       
-    }
+    self.rows = newDetailItems;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

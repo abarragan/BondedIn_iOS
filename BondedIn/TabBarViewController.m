@@ -67,8 +67,9 @@
     NSError *error = nil;
     NSManagedObjectContext* context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
-    int idndex=[[self.childViewControllers objectAtIndex:0]urlIndex];
+    int index=[[self.childViewControllers objectAtIndex:0]urlIndex];
     Fit * fit= [self.rowsNewSearch objectAtIndex:index];
+    
     fit.status=favorites;
     
     // Save the context.
@@ -77,23 +78,28 @@
         abort();
     }
     [self configureTabs];
+    //Data of Favorites
+    [[self.childViewControllers objectAtIndex:1]setDetailItems:self.rowsFavorites andTypeDetail:favorites];
+    
 }
 
 -(void)deleteAction{
     NSError *error = nil;
     NSManagedObjectContext* context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
-    int idndex=[[self.childViewControllers objectAtIndex:0]urlIndex];
+    int index=[[self.childViewControllers objectAtIndex:0]urlIndex];
     Fit * fit= [self.rowsNewSearch objectAtIndex:index];
     
+    fit.status=deleted;
     // Save the context.
     if (![context save:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    fit.status=deleted;
-
+   
   [self configureTabs];
+  [[self.childViewControllers objectAtIndex:2]setDetailItems:self.rowsDeleted andTypeDetail:deleted];
+    
     
 }
 - (void)configureTabs{
@@ -150,7 +156,7 @@
     UIBarButtonItem *favoriteButton = [[UIBarButtonItem alloc]
                                        initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                        target:self
-                                       action:@selector(favoriteAction:)];
+                                       action:@selector(favoriteAction)];
     favoriteButton.style = UIBarButtonItemStyleBordered;
     [buttons addObject:favoriteButton ];
 
@@ -158,14 +164,13 @@
     UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc]
                                      initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
                                      target:self
-                                     action:@selector(deleteAction:)];
+                                     action:@selector(deleteAction)];
     deleteButton.style = UIBarButtonItemStyleBordered;
     [buttons addObject:deleteButton];
    
     // put the buttons in the toolbar and release them
     [self.toolbar setItems:buttons animated:NO];
-   
-    
+      
     // place the toolbar into the navigation bar
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.toolbar];
    
@@ -173,9 +178,10 @@
     
     //New search-->webViews with the profiles
     [[self.childViewControllers objectAtIndex:0]setDataSource: self];
-    
+   
     //Data of Favorites/Deleted
     [[self.childViewControllers objectAtIndex:1]setDetailItems:self.rowsFavorites andTypeDetail:favorites];
+    
     [[self.childViewControllers objectAtIndex:2]setDetailItems:self.rowsDeleted andTypeDetail:deleted];
     
 }

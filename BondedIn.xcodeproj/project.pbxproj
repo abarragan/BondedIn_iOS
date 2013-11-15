@@ -159,13 +159,13 @@
 		BE9985FF1823F67C00E30AD5 /* BondedIn */ = {
 			isa = PBXGroup;
 			children = (
-				BEA28DBE1835162F006B30D5 /* WebCollectionViewController.h */,
-				BEA28DBF1835162F006B30D5 /* WebCollectionViewController.m */,
 				BE8D48AF18282D460096639E /* Model */,
 				BE9986081823F67C00E30AD5 /* AppDelegate.h */,
 				BE87C5D9182D7AAE003FA309 /* DetailViewController.m */,
 				BE8C998A1831480500882F34 /* MainStoryboard.storyboard */,
+				BEA28DBE1835162F006B30D5 /* WebCollectionViewController.h */,
 				BE9986091823F67C00E30AD5 /* AppDelegate.m */,
+				BEA28DBF1835162F006B30D5 /* WebCollectionViewController.m */,
 				BE99861A1823F67D00E30AD5 /* DetailViewController.h */,
 				BE8E5288182D468400325707 /* TabBarViewController.m */,
 				BE8E5287182D468400325707 /* TabBarViewController.h */,
