@@ -23,6 +23,8 @@
 @property (readonly, nonatomic)  int urlIndex;
 @property (weak, nonatomic) id <WebCollectionViewControllerDataSource> dataSource;
 
+-(void) deleteCurrentUrl;
+
 @end
 
 
