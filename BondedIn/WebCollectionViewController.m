@@ -117,6 +117,20 @@
 
 }
 
+-(void) deleteCurrentUrl {
+    // replace current with right
+    UIWebView* temp = self.rightView;
+    self.currentView = self.rightView;
+    self.rightView = temp;
+    // decrease urlIndex
+    _urlIndex --;
+    // cargar right si corresponde
+    if (_urlIndex < self.pageControl.numberOfPages - 1) {
+        [self loadWebView: self.rightView withIndex: _urlIndex+1];
+    }
+    [self viewDidLayoutSubviews];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
