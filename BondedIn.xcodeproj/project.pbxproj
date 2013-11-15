@@ -14,7 +14,6 @@
 		BE8841A1182AD9B60053C860 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8841A0182AD9B60053C860 /* Note.m */; };
 		BE8841A4182AD9B60053C860 /* Requisition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8841A3182AD9B60053C860 /* Requisition.m */; };
 		BE8841AA182AD9B60053C860 /* Technology.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8841A9182AD9B60053C860 /* Technology.m */; };
-		BE8841AF182AE0500053C860 /* DeveloperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8841AE182AE0500053C860 /* DeveloperModel.m */; };
 		BE884531182422B10036CA99 /* RequisitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE884530182422B10036CA99 /* RequisitionViewController.m */; };
 		BE898A99183176BD00BB6E99 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE898A98183176BD00BB6E99 /* ContactViewController.m */; };
 		BE8C998C1831480500882F34 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8C998A1831480500882F34 /* MainStoryboard.storyboard */; };
@@ -52,8 +51,6 @@
 		BE8841A3182AD9B60053C860 /* Requisition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Requisition.m; sourceTree = "<group>"; };
 		BE8841A8182AD9B60053C860 /* Technology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Technology.h; sourceTree = "<group>"; };
 		BE8841A9182AD9B60053C860 /* Technology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Technology.m; sourceTree = "<group>"; };
-		BE8841AD182AE0500053C860 /* DeveloperModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeveloperModel.h; path = ../../Desktop/BondedIn/OAuthStarterKit/DeveloperModel.h; sourceTree = "<group>"; };
-		BE8841AE182AE0500053C860 /* DeveloperModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeveloperModel.m; path = ../../Desktop/BondedIn/OAuthStarterKit/DeveloperModel.m; sourceTree = "<group>"; };
 		BE88452F182422B10036CA99 /* RequisitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequisitionViewController.h; sourceTree = "<group>"; };
 		BE884530182422B10036CA99 /* RequisitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequisitionViewController.m; sourceTree = "<group>"; };
 		BE898A97183176BD00BB6E99 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
@@ -109,8 +106,6 @@
 		BE8D48AF18282D460096639E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BE8841AD182AE0500053C860 /* DeveloperModel.h */,
-				BE8841AE182AE0500053C860 /* DeveloperModel.m */,
 				BE884199182AD9B20053C860 /* Profile.h */,
 				BE88419A182AD9B30053C860 /* Profile.m */,
 				BE88419C182AD9B50053C860 /* Location.h */,
@@ -277,7 +272,6 @@
 				BE8841A1182AD9B60053C860 /* Note.m in Sources */,
 				BE8841A4182AD9B60053C860 /* Requisition.m in Sources */,
 				BE8841AA182AD9B60053C860 /* Technology.m in Sources */,
-				BE8841AF182AE0500053C860 /* DeveloperModel.m in Sources */,
 				BE8E5289182D468400325707 /* TabBarViewController.m in Sources */,
 				BE87C5DA182D7AAE003FA309 /* DetailViewController.m in Sources */,
 				BE8C998F1831495500882F34 /* ProfileViewController.m in Sources */,
