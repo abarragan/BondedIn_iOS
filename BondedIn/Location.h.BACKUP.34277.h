@@ -2,7 +2,11 @@
 //  Location.h
 //  BondedIn
 //
+<<<<<<< HEAD
+//  Created by Silvio Jaureguibehere on 11/7/13.
+=======
 //  Created by Silvio Jaureguibehere on 11/6/13.
+>>>>>>> Requisition Detail Functionality
 //
 //
 
@@ -13,8 +17,12 @@
 
 @interface Location : NSManagedObject
 
+<<<<<<< HEAD
 @property (nonatomic, retain) NSString * province;
 @property (nonatomic, retain) NSString * city;
+=======
+@property (nonatomic, retain) NSString * name;
+>>>>>>> Requisition Detail Functionality
 @property (nonatomic, retain) NSSet *locationRequisition;
 @end
 

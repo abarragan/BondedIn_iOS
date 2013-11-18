@@ -2,7 +2,11 @@
 //  Fit.h
 //  BondedIn
 //
+<<<<<<< HEAD
 //  Created by Silvio Jaureguibehere on 11/7/13.
+=======
+//  Created by Silvio Jaureguibehere on 11/13/13.
+>>>>>>> Requisition Detail Functionality
 //
 //
 
@@ -14,7 +18,11 @@
 @interface Fit : NSManagedObject
 
 @property (nonatomic, retain) NSString * status;
+<<<<<<< HEAD
+@property (nonatomic, retain) NSSet *fitNote;
+=======
 @property (nonatomic, retain) Note *fitNote;
+>>>>>>> Requisition Detail Functionality
 @property (nonatomic, retain) Profile *fitProfile;
 @property (nonatomic, retain) Requisition *fitRequisition;
 @end

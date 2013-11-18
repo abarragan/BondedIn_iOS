@@ -13,8 +13,12 @@
 
 @interface Location : NSManagedObject
 
+<<<<<<< HEAD
 @property (nonatomic, retain) NSString * province;
 @property (nonatomic, retain) NSString * city;
+=======
+@property (nonatomic, retain) NSString * name;
+>>>>>>> 0e742953841d054bd05d393c6e7a3ded0eae1564
 @property (nonatomic, retain) NSSet *locationRequisition;
 @end
 

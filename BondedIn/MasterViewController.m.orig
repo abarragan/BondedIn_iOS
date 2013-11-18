@@ -35,6 +35,7 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
+<<<<<<< HEAD
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.fetchedResultsController performFetch:nil];
@@ -42,6 +43,11 @@
     for (Requisition *requisition in [self.fetchedResultsController fetchedObjects]){
         NSLog(@"Name: %@", requisition.name);
     }
+=======
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+    
+>>>>>>> 0e742953841d054bd05d393c6e7a3ded0eae1564
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,6 +56,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+<<<<<<< HEAD
+=======
+- (void)insertNewObject:(id)sender
+{
+    //INSERT A NEW REQUISITION//
+    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+
+    Requisition *requisition = [NSEntityDescription
+                                insertNewObjectForEntityForName:[entity name]
+                                inManagedObjectContext:context];
+    
+    requisition.name= @"Android Developer";
+    requisition.briefDescription=@"DevSpark is seeking a...";
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![context save:&error]) {
+         // Replace this implementation with code to handle the error appropriately.
+         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    [self.fetchedResultsController performFetch:&error];
+    [self.tableView reloadData];
+  
+
+}
+>>>>>>> 0e742953841d054bd05d393c6e7a3ded0eae1564
 
 #pragma mark - Table View
 
@@ -70,7 +105,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{  
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
@@ -97,24 +132,39 @@
         }
         [self.fetchedResultsController performFetch:&error];
         [self.tableView reloadData];
+<<<<<<< HEAD
     }
+=======
+        
+    }
+     
+>>>>>>> 0e742953841d054bd05d393c6e7a3ded0eae1564
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // The table view should not be re-orderable.
-    return NO;
+    return NO; 
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"viewResults"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Requisition *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setRequisitionItem: object];
+<<<<<<< HEAD
+        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setDetailItem:object];
     } else if ([[segue identifier] isEqualToString:@"viewRequisition"]){
         openingRequisition = [segue destinationViewController];
+=======
+        Requisition *requisition = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setRequisitionItem:requisition];
+    } else {
+      //  NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath: detailIndex];
+     //   [[[segue destinationViewController] myTextField] setText:[[object valueForKey:@"timeStamp"] description]];
+>>>>>>> 0e742953841d054bd05d393c6e7a3ded0eae1564
     }
+   
 }
 
 #pragma mark - Fetched results controller	
@@ -213,10 +263,16 @@
     //Style text -detailText
     cell.contentView.backgroundColor = self.tableView.backgroundColor;
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+<<<<<<< HEAD
+=======
+    //cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+>>>>>>> 0e742953841d054bd05d393c6e7a3ded0eae1564
     
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"name"] description];
     cell.detailTextLabel.text = [[object valueForKey:@"briefDescription"] description];
 }
+
+
 
 @end
