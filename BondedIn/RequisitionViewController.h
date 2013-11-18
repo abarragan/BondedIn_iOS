@@ -12,7 +12,7 @@
 #define TECHNOLOGY_SECTION 0
 #define LOCATION_SECTION 1
 
-@interface RequisitionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface RequisitionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITextViewDelegate>
 
 @property (strong, nonatomic) Requisition* requisition;
 

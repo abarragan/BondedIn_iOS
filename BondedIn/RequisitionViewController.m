@@ -14,12 +14,13 @@
 
 @interface RequisitionViewController ()
 
+@property (strong, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) NSMutableArray* locations;
 @property (strong, nonatomic) NSMutableArray* technologies;
 
-- (IBAction)doneEditing:(id)sender;
+- (IBAction)saveEdition:(id)sender;
 
 @end
 
@@ -42,7 +43,6 @@
     self.title = @"Requisition";
     if (self.requisition == nil)
         self.nameTextField.text = @"New Requisition";
-    [self.nameTextField resignFirstResponder];
     [self.view endEditing:YES];
 }
 
@@ -51,16 +51,21 @@
     return YES;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
+
 -(void) setRequisition: (Requisition*) openedRequisition {
     _requisition = openedRequisition;
     self.nameTextField.text = [self.requisition name];
+    self.descriptionTextView.text = [self.requisition briefDescription];
     self.technologies = [[self.requisition.requisitionTechnology allObjects] mutableCopy];
     self.locations = [[self.requisition.requisitionLocation allObjects] mutableCopy];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
     if ([[segue identifier] isEqualToString:@"technologiesList"]) {
         [[segue destinationViewController] setArray:self.technologies andSetOperatingTable:@"Technology" withColumn:@"Name"];
     } else if ([[segue identifier] isEqualToString:@"locationsList"]){
@@ -124,7 +129,7 @@
     return 45;
 }
 
-- (IBAction)doneEditing:(id)sender {
+- (IBAction)saveEdition:(id)sender {
     NSSet* newTechs = [NSSet setWithArray:self.technologies];
     NSSet* newLocations = [NSSet setWithArray:self.locations];
     
@@ -137,11 +142,12 @@
                                     inManagedObjectContext:context];
     } else {
         //EDITING REQUISITION
-        //self.requisition.requisitionTechnology = nil;
-        //self.requisition.requisitionLocation = nil;
+        self.requisition.requisitionTechnology = nil;
+        self.requisition.requisitionLocation = nil;
     }
     
     self.requisition.name = self.nameTextField.text;
+    self.requisition.briefDescription = self.descriptionTextView.text;
     [self.requisition addRequisitionLocation:newLocations];
     [self.requisition addRequisitionTechnology:newTechs];    
     
