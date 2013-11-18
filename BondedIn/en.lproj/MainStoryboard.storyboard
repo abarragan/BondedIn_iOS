@@ -409,7 +409,6 @@
     </scenes>
     <resources>
         <image name="down.png" width="30" height="30"/>
-        <image name="down.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

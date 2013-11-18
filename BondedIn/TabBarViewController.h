@@ -12,7 +12,6 @@
 
 @interface TabBarViewController : UITabBarController <WebCollectionViewControllerDataSource>
 
-@property (strong, nonatomic) IBOutlet UITabBar *tabBar;
 @property (strong, nonatomic) Requisition* requisitionItem;
 @property (strong, nonatomic) NSMutableArray *rowsFavorites;
 @property (strong, nonatomic) NSMutableArray *rowsNewSearch;
