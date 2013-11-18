@@ -20,7 +20,7 @@
 
 @protocol WebCollectionViewControllerDelegate <NSObject>
 
--(int) webCollectionViewController: (WebCollectionViewController*) webViewCollectionController buttonPressedIsLeft: (BOOL)isLeft;
+-(void) webCollectionViewController: (WebCollectionViewController*) webViewCollectionController buttonPressedIsLeft: (BOOL)isLeft;
 
 @end
 
