@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @class WebCollectionViewController;
-@protocol WebCollectionViewControllerDataSource <NSObject>
 
+@protocol WebCollectionViewControllerDataSource <NSObject>
 
 -(int) urlCountInWebCollectionViewController: (WebCollectionViewController*) webViewCollectionController;
 -(NSString*) webCollectionViewController: (WebCollectionViewController*) webViewCollectionController urlForIndex: (int)  index;
@@ -18,12 +18,18 @@
 @end
 
 
+@protocol WebCollectionViewControllerDelegate <NSObject>
+
+-(int) webCollectionViewController: (WebCollectionViewController*) webViewCollectionController buttonPressedIsLeft: (BOOL)isLeft;
+
+@end
+
+
 @interface WebCollectionViewController : UIViewController
 
 @property (readonly, nonatomic)  int urlIndex;
 @property (weak, nonatomic) id <WebCollectionViewControllerDataSource> dataSource;
-
--(void) deleteCurrentUrl;
+@property (weak, nonatomic) id <WebCollectionViewControllerDelegate> delegate;
 
 @end
 
