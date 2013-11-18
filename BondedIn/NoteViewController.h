@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Fit.h"
 
-@interface NoteViewController :  UIViewController <UITableViewDelegate>
+@interface NoteViewController :  UIViewController <UITableViewDelegate, UITextViewDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UITextView *textView;
