@@ -135,7 +135,7 @@
     // replace current with right
     UIWebView* temp = self.rightView;
     //CGRect tempFrame = self.rightView.frame;
-    self.rightView.frame = self.currentView.frame;
+    // self.rightView.frame = self.currentView.frame;
     self.rightView = self.currentView;
     //self.currentView.frame = tempFrame;
     self.currentView = temp;
@@ -145,6 +145,13 @@
     // cargar right si corresponde
     if (_urlIndex == self.pageControl.numberOfPages) {
         _urlIndex --;
+        temp = self.rightView;
+        self.rightView = self.currentView;
+        self.currentView = self.leftView;
+        self.leftView = temp;
+        if (_urlIndex > 0) {
+            [self loadWebView: self.rightView withIndex: _urlIndex-1];
+        }
     }
     if (_urlIndex < self.pageControl.numberOfPages - 1) {
         [self loadWebView: self.rightView withIndex: _urlIndex+1];
@@ -158,14 +165,24 @@
     CGRect currentFrame = self.currentView.frame;
     [UIView animateWithDuration: 0.5f
                      animations:^{
-                         self.currentView.frame = [sender frame];
+                         CGRect sizingRect;
+                         if (sender == self.leftButton) {
+                             sizingRect = CGRectMake(self.currentView.frame.origin.x, self.currentView.frame.origin.y + self.currentView.frame.size.height, 1, 1);
+                         } else {
+                             sizingRect = CGRectMake(self.currentView.frame.origin.x + self.currentView.frame.size.width, self.currentView.frame.origin.y + self.currentView.frame.size.height, 1, 1);
+                         }
+                         self.currentView.frame = sizingRect;
                          float clockwise = (sender == self.leftButton)? +0.001 : -0.001;
                          self.currentView.transform = CGAffineTransformMakeRotation(M_PI+clockwise);
                      }
                      completion: ^(BOOL what){
                          [UIView animateWithDuration: 0.5f
                                           animations:^{
-                                              self.rightView.frame = currentFrame;
+                                              if (_urlIndex < self.pageControl.numberOfPages - 1){
+                                                  self.rightView.frame = currentFrame;
+                                              } else if (_urlIndex > 0){
+                                                  self.leftView.frame = currentFrame;
+                                              }
                                           }
                                           completion: nil
                           ];
