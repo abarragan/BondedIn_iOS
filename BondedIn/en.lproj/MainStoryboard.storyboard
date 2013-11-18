@@ -111,9 +111,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="M37-uW-0Fg">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="504" id="R0N-7r-YW0"/>
-                                </constraints>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TechnologyCell" textLabel="qIN-ro-hfz" style="IBUITableViewCellStyleDefault" id="Q2r-8R-YrJ">
@@ -265,27 +262,43 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqF-vu-Aor">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="92v-eM-Z5s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JZR-Z7-oh3" id="yrf-Nq-3pH"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="M37-uW-0Fg" firstAttribute="top" secondItem="Eqd-PB-QVv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5mB-BW-4Br"/>
-                            <constraint firstItem="M37-uW-0Fg" firstAttribute="leading" secondItem="QS8-a3-6dI" secondAttribute="leading" type="default" id="Uag-I8-my0"/>
-                            <constraint firstItem="dfL-0b-giu" firstAttribute="top" secondItem="QS8-a3-6dI" secondAttribute="top" constant="14" id="Z93-Xe-4vq"/>
+                            <constraint firstItem="bqF-vu-Aor" firstAttribute="leading" secondItem="QS8-a3-6dI" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="40U-cM-Zxj"/>
+                            <constraint firstItem="M37-uW-0Fg" firstAttribute="bottom" secondItem="QS8-a3-6dI" secondAttribute="bottom" type="default" id="4BS-2U-j8Y"/>
+                            <constraint firstItem="Eqd-PB-QVv" firstAttribute="top" secondItem="QS8-a3-6dI" secondAttribute="top" constant="11" id="5kN-kY-MQw"/>
+                            <constraint firstItem="M37-uW-0Fg" firstAttribute="top" secondItem="bqF-vu-Aor" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="S2V-lh-7ht"/>
+                            <constraint firstItem="M37-uW-0Fg" firstAttribute="leading" secondItem="QS8-a3-6dI" secondAttribute="leading" type="user" id="Uag-I8-my0"/>
+                            <constraint firstItem="Eqd-PB-QVv" firstAttribute="baseline" secondItem="dfL-0b-giu" secondAttribute="baseline" type="default" id="ZPQ-Z5-uZS"/>
+                            <constraint firstItem="bqF-vu-Aor" firstAttribute="top" secondItem="QS8-a3-6dI" secondAttribute="top" constant="48" id="cKq-Sj-bz4"/>
                             <constraint firstItem="dfL-0b-giu" firstAttribute="leading" secondItem="QS8-a3-6dI" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="eVR-8R-qTo"/>
-                            <constraint firstItem="Eqd-PB-QVv" firstAttribute="top" secondItem="QS8-a3-6dI" secondAttribute="top" constant="10" id="kGk-dv-Y7U"/>
+                            <constraint firstAttribute="trailing" secondItem="bqF-vu-Aor" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lxT-7z-0j4"/>
                             <constraint firstItem="M37-uW-0Fg" firstAttribute="trailing" secondItem="QS8-a3-6dI" secondAttribute="trailing" type="default" id="pAs-dQ-2Us"/>
                             <constraint firstAttribute="trailing" secondItem="Eqd-PB-QVv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wxs-Tf-Hrv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AoC-XP-A1Z">
                         <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Eg8-03-3uc">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Eg8-03-3uc">
                             <connections>
-                                <action selector="doneEditing:" destination="JZR-Z7-oh3" id="rYG-h9-njg"/>
+                                <action selector="saveEdition:" destination="JZR-Z7-oh3" id="JNF-aD-k2k"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionTextView" destination="bqF-vu-Aor" id="6QS-aB-uob"/>
                         <outlet property="nameTextField" destination="Eqd-PB-QVv" id="E3X-6w-xGR"/>
                         <outlet property="tableview" destination="M37-uW-0Fg" id="emt-fT-9EX"/>
                     </connections>
@@ -348,7 +361,8 @@
         <class className="RequisitionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RequisitionViewController.h"/>
             <relationships>
-                <relationship kind="action" name="doneEditing:"/>
+                <relationship kind="action" name="saveEdition:"/>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
             </relationships>
@@ -363,7 +377,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bt9-Lu-Tjg"/>
         <segue reference="ljM-n3-e7B"/>
+        <segue reference="bt9-Lu-Tjg"/>
     </inferredMetricsTieBreakers>
 </document>
