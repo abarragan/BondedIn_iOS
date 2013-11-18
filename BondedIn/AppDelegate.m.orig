@@ -47,6 +47,7 @@
                  
         //LOCATION//
         Location *location1 = [NSEntityDescription
+<<<<<<< HEAD
                                insertNewObjectForEntityForName:@"Location"
                                inManagedObjectContext:context];
         
@@ -105,6 +106,24 @@
                                   inManagedObjectContext:context];
         
         technology5.name= @"Android";
+=======
+                                    insertNewObjectForEntityForName:@"Location"
+                                    inManagedObjectContext:context];
+        
+        location1.name= @"Buenos Aires";
+        
+        Location *location2 = [NSEntityDescription
+                    insertNewObjectForEntityForName:@"Location"
+                    inManagedObjectContext:context];
+        
+        location2.name= @"Cordoba";
+        //TECHNOLOGY//
+        Technology *technology = [NSEntityDescription
+                              insertNewObjectForEntityForName:@"Technology"
+                              inManagedObjectContext:context];
+        
+        technology.name= @"Java";
+>>>>>>> 0e742953841d054bd05d393c6e7a3ded0eae1564
         
         //PROFILE//
         Profile *profile1 = [NSEntityDescription
@@ -232,6 +251,7 @@
         ///RELATIONS//
         [requisition addRequisitionLocationObject:location1];
         [requisition addRequisitionLocationObject:location2];
+        [requisition addRequisitionTechnologyObject: technology];
         [requisition addRequisitionFitObject: fit1];
         [requisition addRequisitionFitObject: fit2];
         [requisition addRequisitionFitObject: fit3];
@@ -254,8 +274,14 @@
         
         ///------------------------------------------------------------------------//
     }
+<<<<<<< HEAD
     return YES;
 }
+=======
+    
+    
+  }
+>>>>>>> 0e742953841d054bd05d393c6e7a3ded0eae1564
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

@@ -7,10 +7,13 @@
 //
 
 #import "DetailViewController.h"
+#import "ProfileTableViewCell.h"
+
 #define favorites @"Favorites"
 #define deleted @"Deleted"
 
 @interface DetailViewController ()
+
 - (void)configureView;
 @end
 
@@ -25,6 +28,13 @@
     self.typeDetail=typeDetail;
     self.rows = newDetailItems;
     [self.tableView reloadData];
+    /*
+    if([self.typeDetail isEqualToString:deleted]){
+        [self.tableView setAllowsSelection:NO];
+    } else {
+        [self.tableView setAllowsSelection:YES];
+    }
+     */
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -63,16 +73,26 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    ProfileTableViewCell *cell = (ProfileTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+   
+    Fit *fit=  [self.rows objectAtIndex:indexPath.row];
+    Profile * profile=fit.fitProfile;
+    
+    NSString *firstName = profile.firstName;
+    NSString *lastName = profile.lastName;
+
+    NSString *fullName=[NSString stringWithFormat:@"%@ %@.", firstName, lastName];
+
+    [cell configureWithName:fullName city:profile.province company:profile.company imageUrl:profile.pictureUrl];
+   
+    /*
     
     //Style text -detailText
     cell.contentView.backgroundColor = self.tableView.backgroundColor;
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     
-    Fit *fit=  [self.rows objectAtIndex:indexPath.row];
-    Profile * profile=fit.fitProfile;
-       
+    
     NSString *firstName = profile.firstName;
     NSString *lastName = profile.lastName;
     NSString *fullName=[NSString stringWithFormat:@"%@ %@.", firstName,lastName];
@@ -122,13 +142,15 @@
     [cell.imageView.image drawInRect:imageRect];
     cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+     */
     
     //If is tab "Deleted" can't see the profile and select the row
-    if([self.typeDetail isEqual:deleted]){
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if([self.typeDetail isEqualToString:deleted]){
         cell.accessoryType=UITableViewCellAccessoryNone;
         [self.tableView setAllowsSelection:NO];
-
+    } else {
+        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+        [self.tableView setAllowsSelection:YES];
     }
     return cell;
 }

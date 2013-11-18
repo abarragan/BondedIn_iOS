@@ -37,6 +37,7 @@
 		BEACCB17183264DF00F1ACA1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEACCB16183264DF00F1ACA1 /* MessageUI.framework */; };
 		D967E65618369CB100FCF660 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = D967E65418369CB100FCF660 /* down.png */; };
 		D967E65718369CB200FCF660 /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D967E65518369CB100FCF660 /* down@2x.png */; };
+		D967E65A183A882400FCF660 /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D967E659183A882400FCF660 /* ProfileTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,8 @@
 		BEACCB16183264DF00F1ACA1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D967E65418369CB100FCF660 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
 		D967E65518369CB100FCF660 /* down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down@2x.png"; sourceTree = "<group>"; };
+		D967E658183A882400FCF660 /* ProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
+		D967E659183A882400FCF660 /* ProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +185,8 @@
 				BE884530182422B10036CA99 /* RequisitionViewController.m */,
 				BEA6324D18293495004DD0E8 /* SelectionListViewController.h */,
 				BEA6324E18293496004DD0E8 /* SelectionListViewController.m */,
+				D967E658183A882400FCF660 /* ProfileTableViewCell.h */,
+				D967E659183A882400FCF660 /* ProfileTableViewCell.m */,
 			);
 			path = BondedIn;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				BE88419E182AD9B50053C860 /* Location.m in Sources */,
 				BE8841A1182AD9B60053C860 /* Note.m in Sources */,
 				BE8841A4182AD9B60053C860 /* Requisition.m in Sources */,
+				D967E65A183A882400FCF660 /* ProfileTableViewCell.m in Sources */,
 				BE8841AA182AD9B60053C860 /* Technology.m in Sources */,
 				BE8E5289182D468400325707 /* TabBarViewController.m in Sources */,
 				BE87C5DA182D7AAE003FA309 /* DetailViewController.m in Sources */,

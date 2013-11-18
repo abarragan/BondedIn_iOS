@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Fit" representedClassName="Fit" syncable="YES">
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fitNote" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" syncable="YES"/>
+        <relationship name="fitProfile" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" syncable="YES"/>
+        <relationship name="fitRequisition" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Requisition" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="province" attributeType="String" syncable="YES"/>
+        <relationship name="locationRequisition" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Requisition" inverseName="requisitionLocation" inverseEntity="Requisition" syncable="YES"/>
+    </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="noteFit" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Fit" syncable="YES"/>
+    </entity>
+    <entity name="Profile" representedClassName="Profile" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="pictureUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="province" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publicProfileUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="profileFit" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fit" syncable="YES"/>
+    </entity>
+    <entity name="Requisition" representedClassName="Requisition" syncable="YES">
+        <attribute name="briefDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString="New Requisition" syncable="YES"/>
+        <relationship name="requisitionFit" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fit" syncable="YES"/>
+        <relationship name="requisitionLocation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="locationRequisition" inverseEntity="Location" syncable="YES"/>
+        <relationship name="requisitionTechnology" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Technology" inverseName="technologyRequisition" inverseEntity="Technology" syncable="YES"/>
+    </entity>
+    <entity name="Technology" representedClassName="Technology" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="technologyRequisition" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Requisition" inverseName="requisitionTechnology" inverseEntity="Requisition" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Fit" positionX="-18" positionY="165" width="128" height="103"/>
+        <element name="Location" positionX="-198" positionY="45" width="128" height="88"/>
+        <element name="Note" positionX="97" positionY="69" width="128" height="75"/>
+        <element name="Profile" positionX="259" positionY="75" width="128" height="193"/>
+        <element name="Requisition" positionX="-11" positionY="-90" width="128" height="118"/>
+        <element name="Technology" positionX="270" positionY="-90" width="128" height="73"/>
+    </elements>
+</model>
