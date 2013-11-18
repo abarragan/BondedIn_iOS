@@ -35,6 +35,8 @@
 		BE9986191823F67D00E30AD5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9986181823F67D00E30AD5 /* MasterViewController.m */; };
 		BEA6324F182934B3004DD0E8 /* SelectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA6324E18293496004DD0E8 /* SelectionListViewController.m */; };
 		BEACCB17183264DF00F1ACA1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEACCB16183264DF00F1ACA1 /* MessageUI.framework */; };
+		D967E65618369CB100FCF660 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = D967E65418369CB100FCF660 /* down.png */; };
+		D967E65718369CB200FCF660 /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D967E65518369CB100FCF660 /* down@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,8 @@
 		BEA6324D18293495004DD0E8 /* SelectionListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionListViewController.h; sourceTree = "<group>"; };
 		BEA6324E18293496004DD0E8 /* SelectionListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionListViewController.m; sourceTree = "<group>"; };
 		BEACCB16183264DF00F1ACA1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D967E65418369CB100FCF660 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		D967E65518369CB100FCF660 /* down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,8 @@
 		BE9986001823F67C00E30AD5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D967E65418369CB100FCF660 /* down.png */,
+				D967E65518369CB100FCF660 /* down@2x.png */,
 				BE9986051823F67C00E30AD5 /* main.m */,
 				BE9986071823F67C00E30AD5 /* BondedIn-Prefix.pch */,
 				BE9986011823F67C00E30AD5 /* BondedIn-Info.plist */,
@@ -250,7 +256,9 @@
 				BE99860C1823F67D00E30AD5 /* Default.png in Resources */,
 				BE99860E1823F67D00E30AD5 /* Default@2x.png in Resources */,
 				BE9986101823F67D00E30AD5 /* Default-568h@2x.png in Resources */,
+				D967E65718369CB200FCF660 /* down@2x.png in Resources */,
 				BE8C998C1831480500882F34 /* MainStoryboard.storyboard in Resources */,
+				D967E65618369CB100FCF660 /* down.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +375,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BondedIn/BondedIn-Prefix.pch";
 				INFOPLIST_FILE = "BondedIn/BondedIn-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -378,7 +388,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BondedIn/BondedIn-Prefix.pch";
 				INFOPLIST_FILE = "BondedIn/BondedIn-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

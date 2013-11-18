@@ -17,9 +17,16 @@
 @property (strong, nonatomic) UIWebView* leftView;
 @property (strong, nonatomic) UIWebView* currentView;
 @property (strong, nonatomic) UIWebView* rightView;
+@property (weak, nonatomic) IBOutlet UIButton *leftButton;
+@property (weak, nonatomic) IBOutlet UIButton *rightButton;
+
+- (IBAction)buttonTapped:(id)sender;
 
 -(void) setup;
 -(void) setupWithUrlCount: (int) urlCount;
+-(void) annimateCurrentViewTo: (UIView*) view;
+-(void) deleteCurrentUrl;
+
  
 @end
 
@@ -94,15 +101,22 @@
 -(void) viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
+    [self relayoutViews];
+}
+-(void) relayoutViews {
     self.leftView.hidden = YES;
     self.currentView.hidden = YES;
     self.rightView.hidden = YES;
     
     if (!self.pageControl.numberOfPages) {
         self.noItemsLabel.hidden = NO;
+        self.leftButton.hidden = YES;
+        self.rightButton.hidden = YES;
         self.scrollView.contentSize = self.scrollView.frame.size;
     } else {
         self.noItemsLabel.hidden = YES;
+        self.leftButton.hidden = NO;
+        self.rightButton.hidden = NO;
         self.currentView.hidden = NO;
         CGSize pageSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height);
         CGPoint pageOrigin = CGPointMake(pageSize.width * self.pageControl.currentPage, 0);
@@ -120,17 +134,48 @@
 -(void) deleteCurrentUrl {
     // replace current with right
     UIWebView* temp = self.rightView;
-    self.currentView = self.rightView;
-    self.rightView = temp;
-    // decrease urlIndex
-    _urlIndex --;
+    //CGRect tempFrame = self.rightView.frame;
+    self.rightView.frame = self.currentView.frame;
+    self.rightView = self.currentView;
+    //self.currentView.frame = tempFrame;
+    self.currentView = temp;
+    
+    // decrease pageNumber
+    self.pageControl.numberOfPages--;
     // cargar right si corresponde
+    if (_urlIndex == self.pageControl.numberOfPages) {
+        _urlIndex --;
+    }
     if (_urlIndex < self.pageControl.numberOfPages - 1) {
         [self loadWebView: self.rightView withIndex: _urlIndex+1];
     }
-    [self viewDidLayoutSubviews];
+    [self relayoutViews];
+    [self.view setNeedsDisplay];
 }
 
+- (IBAction)buttonTapped:(id)sender {
+    [self.delegate webCollectionViewController: self buttonPressedIsLeft: (sender == self.leftButton)];
+    CGRect currentFrame = self.currentView.frame;
+    [UIView animateWithDuration: 0.5f
+                     animations:^{
+                         self.currentView.frame = [sender frame];
+                         float clockwise = (sender == self.leftButton)? +0.001 : -0.001;
+                         self.currentView.transform = CGAffineTransformMakeRotation(M_PI+clockwise);
+                     }
+                     completion: ^(BOOL what){
+                         [UIView animateWithDuration: 0.5f
+                                          animations:^{
+                                              self.rightView.frame = currentFrame;
+                                          }
+                                          completion: nil
+                          ];
+                         [self deleteCurrentUrl];
+                     }];
+}
+
+
+-(void) annimateCurrentViewTo:(UIView *)view {
+}
 
 - (void)didReceiveMemoryWarning
 {
