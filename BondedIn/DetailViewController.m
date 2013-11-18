@@ -24,6 +24,7 @@
 {
     self.typeDetail=typeDetail;
     self.rows = newDetailItems;
+    [self.tableView reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

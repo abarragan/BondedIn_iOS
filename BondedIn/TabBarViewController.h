@@ -16,6 +16,5 @@
 @property (strong, nonatomic) NSMutableArray *rowsFavorites;
 @property (strong, nonatomic) NSMutableArray *rowsNewSearch;
 @property (strong, nonatomic) NSMutableArray *rowsDeleted;
-@property (strong, nonatomic) UIToolbar* toolbar;
 
 @end

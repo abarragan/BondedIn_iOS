@@ -25,7 +25,7 @@
 
 @implementation TabBarViewController
 
-@synthesize rowsFavorites, rowsNewSearch, rowsDeleted, toolbar;
+@synthesize rowsFavorites, rowsNewSearch, rowsDeleted;
 
 
 - (void)setRequisitionItem:(Requisition*)newRequisitionItem
@@ -36,74 +36,44 @@
     }
 }
 
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
-{
-    int selectedTag=self.tabBar.selectedItem.tag;
+-(void) webCollectionViewController: (WebCollectionViewController*) webViewCollectionController buttonPressedIsLeft: (BOOL)isLeft{
     
-    if(selectedTag==tagNewSearch){
-        if (self.navigationItem.rightBarButtonItem == nil){
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.toolbar];
-        }
-        
-    }
-    else if(selectedTag==tagFavorites){
-        if (self.navigationItem.rightBarButtonItem != nil){
-            self.navigationItem.rightBarButtonItem.enabled=NO;
-            self.navigationItem.rightBarButtonItem=nil;
-        }
-    }
-    else if(selectedTag==tagDeleted){
-        if (self.navigationItem.rightBarButtonItem != nil){
-            self.navigationItem.rightBarButtonItem.enabled=NO;
-            self.navigationItem.rightBarButtonItem=nil;
-        }
-        
-    }
-  
-}
-
-/*
--(void)favoriteAction{
     
     NSError *error = nil;
     NSManagedObjectContext* context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
-    int index=[[self.childViewControllers objectAtIndex: tagFavorites]urlIndex];
+    int index=[[self.childViewControllers objectAtIndex: tagNewSearch]urlIndex];
     Fit * fit= [self.rowsNewSearch objectAtIndex:index];
     
-    fit.status=favorites;
-    
-    // Save the context.
-    if (![context save:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+    //add to favorite
+    if(isLeft){
+       
+        fit.status=favorites;
+        
+        // Save the context.
+        if (![context save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+        [self configureTabs];
+        //Data of Favorites
+        [[self.childViewControllers objectAtIndex:tagFavorites]setDetailItems:self.rowsFavorites andTypeDetail:favorites];
     }
-    [self configureTabs];
-    //Data of Favorites
-    [[self.childViewControllers objectAtIndex:1]setDetailItems:self.rowsFavorites andTypeDetail:favorites];
-    
-}
+    //add to deleted
+    else{
+        fit.status=deleted;
+        
+        // Save the context.
+        if (![context save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+        [self configureTabs];
+        //Data of deleted
+        [[self.childViewControllers objectAtIndex:tagDeleted]setDetailItems:self.rowsDeleted andTypeDetail:deleted];
+    }
 
--(void)deleteAction{
-    NSError *error = nil;
-    NSManagedObjectContext* context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    
-    int index=[[self.childViewControllers objectAtIndex:0]urlIndex];
-    Fit * fit= [self.rowsNewSearch objectAtIndex:index];
-    
-    fit.status=deleted;
-    // Save the context.
-    if (![context save:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-   
-  [self configureTabs];
-  [[self.childViewControllers objectAtIndex:2]setDetailItems:self.rowsDeleted andTypeDetail:deleted];
-    
-    
 }
- */
 
 - (void)configureTabs{
     
@@ -136,55 +106,19 @@
 - (void)configureView
 {
      //BarItems titles
-   /* [[self.tabBar.items objectAtIndex:1 ]setTitle:newSearch];
-    [[self.tabBar.items objectAtIndex:0 ]setTitle:favorites];
-    [[self.tabBar.items objectAtIndex:2 ]setTitle:deleted];
-    
-    //Tag to identify de barItems
-    [[self.tabBar.items objectAtIndex:1 ]setTag:tagNewSearch];
-    [[self.tabBar.items objectAtIndex:0 ]setTag:tagFavorites];
-    [[self.tabBar.items objectAtIndex:2 ]setTag:tagDeleted];
-  */
-    //Toolbar to add Favorites/Deleted
-    self.toolbar = [[UIToolbar alloc]
-                          initWithFrame:CGRectMake(0, 0, 100, 45)];
-    [self.toolbar setBarStyle: UIBarStyleDefault];
-    
-    // create an array for the buttons
-    NSMutableArray* buttons = [[NSMutableArray alloc] initWithCapacity:5];
-    
-          
-    // create a standard delete button with the trash icon
-    //FAVORITE BUTTON
-    UIBarButtonItem *favoriteButton = [[UIBarButtonItem alloc]
-                                       initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                       target:self
-                                       action:@selector(favoriteAction)];
-    favoriteButton.style = UIBarButtonItemStyleBordered;
-    [buttons addObject:favoriteButton ];
-
-    //DELETED BUTTON
-    UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc]
-                                     initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
-                                     target:self
-                                     action:@selector(deleteAction)];
-    deleteButton.style = UIBarButtonItemStyleBordered;
-    [buttons addObject:deleteButton];
-   
-    // put the buttons in the toolbar and release them
-    [self.toolbar setItems:buttons animated:NO];
-      
-    // place the toolbar into the navigation bar
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.toolbar];
-   
+    [[self.tabBar.items objectAtIndex:tagNewSearch ]setTitle:newSearch];
+    [[self.tabBar.items objectAtIndex:tagFavorites]setTitle:favorites];
+    [[self.tabBar.items objectAtIndex:tagDeleted ]setTitle:deleted];
     [self configureTabs];
     
     //New search-->webViews with the profiles
     [[self.childViewControllers objectAtIndex:tagNewSearch]setDataSource: self];
+    [[self.childViewControllers objectAtIndex:tagNewSearch]setDelegate:self];
    
-    //Data of Favorites/Deleted
+    //Data of Favorites
     [[self.childViewControllers objectAtIndex:tagFavorites]setDetailItems:self.rowsFavorites andTypeDetail:favorites];
     
+    //Data of Deleted
     [[self.childViewControllers objectAtIndex:tagDeleted]setDetailItems:self.rowsDeleted andTypeDetail:deleted];
     
 }
