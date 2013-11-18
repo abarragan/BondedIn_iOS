@@ -11,8 +11,8 @@
 #import "Fit.h"
 #import "AppDelegate.h"
 
-#define tagFavorites 1
-#define tagNewSearch 0
+#define tagFavorites 0
+#define tagNewSearch 1
 #define tagDeleted 2
 
 #define favorites @"Favorites"
@@ -62,12 +62,13 @@
   
 }
 
+/*
 -(void)favoriteAction{
     
     NSError *error = nil;
     NSManagedObjectContext* context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
-    int index=[[self.childViewControllers objectAtIndex:0]urlIndex];
+    int index=[[self.childViewControllers objectAtIndex: tagFavorites]urlIndex];
     Fit * fit= [self.rowsNewSearch objectAtIndex:index];
     
     fit.status=favorites;
@@ -102,6 +103,8 @@
     
     
 }
+ */
+
 - (void)configureTabs{
     
     // Update the user interface for the detail item.
@@ -133,15 +136,15 @@
 - (void)configureView
 {
      //BarItems titles
-    [[self.tabBar.items objectAtIndex:0 ]setTitle:newSearch];
-    [[self.tabBar.items objectAtIndex:1 ]setTitle:favorites];
+   /* [[self.tabBar.items objectAtIndex:1 ]setTitle:newSearch];
+    [[self.tabBar.items objectAtIndex:0 ]setTitle:favorites];
     [[self.tabBar.items objectAtIndex:2 ]setTitle:deleted];
     
     //Tag to identify de barItems
-    [[self.tabBar.items objectAtIndex:0 ]setTag:tagNewSearch];
-    [[self.tabBar.items objectAtIndex:1 ]setTag:tagFavorites];
+    [[self.tabBar.items objectAtIndex:1 ]setTag:tagNewSearch];
+    [[self.tabBar.items objectAtIndex:0 ]setTag:tagFavorites];
     [[self.tabBar.items objectAtIndex:2 ]setTag:tagDeleted];
-       
+  */
     //Toolbar to add Favorites/Deleted
     self.toolbar = [[UIToolbar alloc]
                           initWithFrame:CGRectMake(0, 0, 100, 45)];
@@ -177,12 +180,12 @@
     [self configureTabs];
     
     //New search-->webViews with the profiles
-    [[self.childViewControllers objectAtIndex:0]setDataSource: self];
+    [[self.childViewControllers objectAtIndex:tagNewSearch]setDataSource: self];
    
     //Data of Favorites/Deleted
-    [[self.childViewControllers objectAtIndex:1]setDetailItems:self.rowsFavorites andTypeDetail:favorites];
+    [[self.childViewControllers objectAtIndex:tagFavorites]setDetailItems:self.rowsFavorites andTypeDetail:favorites];
     
-    [[self.childViewControllers objectAtIndex:2]setDetailItems:self.rowsDeleted andTypeDetail:deleted];
+    [[self.childViewControllers objectAtIndex:tagDeleted]setDetailItems:self.rowsDeleted andTypeDetail:deleted];
     
 }
 
@@ -199,6 +202,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setViewControllers: [NSArray arrayWithObjects: [self.childViewControllers objectAtIndex:1], [self.childViewControllers objectAtIndex:0], [self.childViewControllers objectAtIndex:2], nil]];
     [self configureView];
         
 }
