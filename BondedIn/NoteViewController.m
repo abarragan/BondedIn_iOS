@@ -39,6 +39,15 @@
   
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+     UITouch *touch = [[event allTouches] anyObject];
+     if ([self.textView isFirstResponder] && [touch view] != self.textView) {
+         [self.textView resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
