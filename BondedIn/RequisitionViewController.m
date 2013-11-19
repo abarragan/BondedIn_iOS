@@ -14,8 +14,11 @@
 
 @interface RequisitionViewController ()
 
+/*
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
+*/
+
 @property (strong, nonatomic) NSMutableArray* locations;
 @property (strong, nonatomic) NSMutableArray* technologies;
 
@@ -40,20 +43,24 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Requisition";
+    /*
     if (self.requisition == nil)
         self.nameTextField.text = @"New Requisition";
     [self.nameTextField resignFirstResponder];
     [self.view endEditing:YES];
+     */
 }
 
+/*
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
 }
+ */
 
 -(void) setRequisition: (Requisition*) openedRequisition {
     _requisition = openedRequisition;
-    self.nameTextField.text = [self.requisition name];
+    // self.nameTextField.text = [self.requisition name];
     self.technologies = [[self.requisition.requisitionTechnology allObjects] mutableCopy];
     self.locations = [[self.requisition.requisitionLocation allObjects] mutableCopy];
 }
@@ -76,11 +83,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == DETAILS_SECTION)
+        return 2;
     if (section == TECHNOLOGY_SECTION)
         return [self.technologies count];
     else if (section == LOCATION_SECTION)
@@ -91,7 +100,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* cell;
-    if (indexPath.section == TECHNOLOGY_SECTION){
+    if (indexPath.section == DETAILS_SECTION){
+        if (indexPath.item == 0) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"TitleCell" forIndexPath:indexPath];
+        } else {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"DetailsCell" forIndexPath:indexPath];
+        }
+        
+    } else if (indexPath.section == TECHNOLOGY_SECTION){
         cell = [tableView dequeueReusableCellWithIdentifier:@"TechnologyCell" forIndexPath:indexPath];
         cell.textLabel.text = [[self.technologies objectAtIndex:indexPath.item] name];
     }
@@ -105,13 +121,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tableview reloadData];
+    // [self.tableview reloadData];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UITableViewCell* cell;
     
-    if (section == TECHNOLOGY_SECTION){
+    if (section == DETAILS_SECTION){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"DetailsHeaderCell"];
+    } else if (section == TECHNOLOGY_SECTION){
         cell = [tableView dequeueReusableCellWithIdentifier:@"TechnologiesHeaderCell"];
     }
     else if (section == LOCATION_SECTION) {
@@ -122,6 +140,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 45;
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 && indexPath.item == 1)
+        return 150;
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
 - (IBAction)doneEditing:(id)sender {
@@ -141,7 +165,7 @@
         //self.requisition.requisitionLocation = nil;
     }
     
-    self.requisition.name = self.nameTextField.text;
+    // self.requisition.name = self.nameTextField.text;
     [self.requisition addRequisitionLocation:newLocations];
     [self.requisition addRequisitionTechnology:newTechs];    
     

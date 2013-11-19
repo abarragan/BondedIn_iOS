@@ -29,8 +29,6 @@
     controller.managedObjectContext = self.managedObjectContext;
    
     //----------------------------Data example ONLY TO TEST----------------------------------//
-    BOOL wasCreatedDataCore = [[NSUserDefaults standardUserDefaults] boolForKey:@"wasCreatedDataCore"];
-    
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"wasCreatedDataCore"]){
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

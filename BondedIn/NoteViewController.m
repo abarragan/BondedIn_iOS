@@ -34,7 +34,7 @@
     [super viewDidLoad];
     self.textView.delegate= self;
     if(_contactItem.fitNote!=nil){
-        self.textView.text=_contactItem.fitNote.name;
+       self.textView.text=_contactItem.fitNote.name;
     }
   
 }

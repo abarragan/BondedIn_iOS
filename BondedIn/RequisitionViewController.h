@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Requisition.h"
 
-#define TECHNOLOGY_SECTION 0
-#define LOCATION_SECTION 1
+#define DETAILS_SECTION 0
+#define TECHNOLOGY_SECTION 1
+#define LOCATION_SECTION 2
 
-@interface RequisitionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface RequisitionViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) Requisition* requisition;
-
 
 -(void) setRequisition: (Requisition*) openedRequisition;
 
