@@ -11,16 +11,15 @@
 #import "Technology.h"
 #import "Location.h"
 #import "AppDelegate.h"
+#import "TitleTableViewCell.h"
+#import "DetailTableViewCell.h"
 
 @interface RequisitionViewController ()
 
-/*
-@property (strong, nonatomic) IBOutlet UITextField *nameTextField;
-@property (strong, nonatomic) IBOutlet UITableView *tableview;
-*/
-
 @property (strong, nonatomic) NSMutableArray* locations;
 @property (strong, nonatomic) NSMutableArray* technologies;
+@property (strong, nonatomic) NSString* title;
+@property (strong, nonatomic) NSString* detail;
 
 - (IBAction)doneEditing:(id)sender;
 
@@ -51,18 +50,22 @@
      */
 }
 
-/*
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    return YES;
+
+
+-(void) titleTableViewCellController: (TitleTableViewCell*) titleTableViewCell titleChange: (NSString*)title{
+    self.title=title;
 }
- */
+
+-(void) detailTableViewCellController: (TitleTableViewCell*) detailTableViewCell detailChange: (NSString*)detail{
+    self.detail=detail;
+}
+
 
 -(void) setRequisition: (Requisition*) openedRequisition {
     _requisition = openedRequisition;
-    // self.nameTextField.text = [self.requisition name];
     self.technologies = [[self.requisition.requisitionTechnology allObjects] mutableCopy];
     self.locations = [[self.requisition.requisitionLocation allObjects] mutableCopy];
+    [self.tableView reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -102,9 +105,14 @@
     UITableViewCell* cell;
     if (indexPath.section == DETAILS_SECTION){
         if (indexPath.item == 0) {
-            cell = [tableView dequeueReusableCellWithIdentifier:@"TitleCell" forIndexPath:indexPath];
+              cell = [tableView dequeueReusableCellWithIdentifier:@"TitleCell"];
+            [(TitleTableViewCell*)cell configureWithTitle: _requisition.name];
+            [(TitleTableViewCell*)cell setDelegate:self];
+              
         } else {
-            cell = [tableView dequeueReusableCellWithIdentifier:@"DetailsCell" forIndexPath:indexPath];
+             cell = (DetailTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"DetailsCell" forIndexPath:indexPath];
+            [(DetailTableViewCell*)cell configureWithDetail:_requisition.briefDescription];
+            [(DetailTableViewCell*)cell setDelegate:self];
         }
         
     } else if (indexPath.section == TECHNOLOGY_SECTION){
@@ -121,7 +129,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    // [self.tableview reloadData];
+    [self.tableView reloadData];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -161,11 +169,13 @@
                                     inManagedObjectContext:context];
     } else {
         //EDITING REQUISITION
-        //self.requisition.requisitionTechnology = nil;
-        //self.requisition.requisitionLocation = nil;
+        [self.requisition removeRequisitionLocation: self.requisition.requisitionLocation];
+        [self.requisition removeRequisitionTechnology: self.requisition.requisitionTechnology];
+
     }
     
-    // self.requisition.name = self.nameTextField.text;
+    self.requisition.name = self.title;
+    self.requisition.briefDescription = self.detail;
     [self.requisition addRequisitionLocation:newLocations];
     [self.requisition addRequisitionTechnology:newTechs];    
     

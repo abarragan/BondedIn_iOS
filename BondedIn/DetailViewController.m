@@ -85,65 +85,7 @@
 
     [cell configureWithName:fullName city:profile.province company:profile.company imageUrl:profile.pictureUrl];
    
-    /*
-    
-    //Style text -detailText
-    cell.contentView.backgroundColor = self.tableView.backgroundColor;
-    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-    
-    
-    NSString *firstName = profile.firstName;
-    NSString *lastName = profile.lastName;
-    NSString *fullName=[NSString stringWithFormat:@"%@ %@.", firstName,lastName];
-    NSString *city= [NSString stringWithFormat:@"%@ %@%",@"City:",profile.province];
-    NSString *company= [NSString stringWithFormat:@"%@ %@%",@"Company:",profile.company];
-    
-    //Firts and Last Name
-    UILabel *mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 10, 200, 25.0)];
-    mainLabel.text=fullName;
-    mainLabel.font = [UIFont boldSystemFontOfSize:16];
-    mainLabel.textColor = [UIColor blackColor];
-    [cell.contentView addSubview:mainLabel];
-     
-    //City
-    UILabel *secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 35.0, 200, 20.0)];
-    secondLabel.text=city;
-    secondLabel.font =  [UIFont boldSystemFontOfSize:12];
-    secondLabel.textColor = [UIColor darkGrayColor];
-    [cell.contentView addSubview:secondLabel];
-    
-    //Current Company
-    UILabel *thirdLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 55, 200, 15.0)];
-    thirdLabel.text=company;
-    thirdLabel.font =  [UIFont systemFontOfSize:12];
-    thirdLabel.textColor = [UIColor lightGrayColor];
-    [cell.contentView addSubview:thirdLabel];
-    
-    
-    //Loading Asynchronous pictures
-    cell.imageView.image=nil;
-    NSURL* url = [NSURL URLWithString:profile.pictureUrl];
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse * response,
-                                               NSData * data,
-                                               NSError * error) {
-                               if (!error){
-                                   UIImage* image = [[UIImage alloc] initWithData:data];
-                                   cell.imageView.image=image;
-                               }
-                               
-                           }];
-    CGSize itemSize = CGSizeMake(80, 80);
-    UIGraphicsBeginImageContext(itemSize);
-    CGRect imageRect = CGRectMake(5.0, 5.0, itemSize.width, itemSize.height);
-    [cell.imageView.image drawInRect:imageRect];
-    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-     */
-    
+       
     //If is tab "Deleted" can't see the profile and select the row
     if([self.typeDetail isEqualToString:deleted]){
         cell.accessoryType=UITableViewCellAccessoryNone;

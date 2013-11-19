@@ -14,6 +14,7 @@
 
 @interface MasterViewController () {
     RequisitionViewController* openingRequisition;
+    IBOutlet UIBarButtonItem * addButtonItem;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -30,18 +31,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-      
+    
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //self.navigationItem.rightBarButtonItem = self.addButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.fetchedResultsController performFetch:nil];
     [self.tableView reloadData];
-    for (Requisition *requisition in [self.fetchedResultsController fetchedObjects]){
-        NSLog(@"Name: %@", requisition.name);
-    }
 }
 
 - (void)didReceiveMemoryWarning
