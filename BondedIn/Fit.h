@@ -2,7 +2,7 @@
 //  Fit.h
 //  BondedIn
 //
-//  Created by Silvio Jaureguibehere on 11/7/13.
+//  Created by Silvio Jaureguibehere on 11/19/13.
 //
 //
 
@@ -17,13 +17,5 @@
 @property (nonatomic, retain) Note *fitNote;
 @property (nonatomic, retain) Profile *fitProfile;
 @property (nonatomic, retain) Requisition *fitRequisition;
-@end
-
-@interface Fit (CoreDataGeneratedAccessors)
-
-- (void)addFitNoteObject:(Note *)value;
-- (void)removeFitNoteObject:(Note *)value;
-- (void)addFitNote:(NSSet *)values;
-- (void)removeFitNote:(NSSet *)values;
 
 @end

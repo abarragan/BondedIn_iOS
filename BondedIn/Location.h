@@ -2,7 +2,7 @@
 //  Location.h
 //  BondedIn
 //
-//  Created by Silvio Jaureguibehere on 11/6/13.
+//  Created by Silvio Jaureguibehere on 11/19/13.
 //
 //
 
@@ -13,8 +13,8 @@
 
 @interface Location : NSManagedObject
 
-@property (nonatomic, retain) NSString * province;
 @property (nonatomic, retain) NSString * city;
+@property (nonatomic, retain) NSString * province;
 @property (nonatomic, retain) NSSet *locationRequisition;
 @end
 
