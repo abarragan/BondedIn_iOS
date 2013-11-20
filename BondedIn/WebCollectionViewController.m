@@ -126,6 +126,9 @@
         if (_urlIndex < self.pageControl.numberOfPages - 1) {
             self.rightView.hidden = NO;
         }
+        if (_urlIndex > 0) {
+            self.leftView.hidden = NO;
+        }
         self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.pageControl.numberOfPages, self.scrollView.frame.size.height);
     }
 
@@ -142,7 +145,8 @@
     
     // decrease pageNumber
     self.pageControl.numberOfPages--;
-    // cargar right si corresponde
+    
+    // last url deleted
     if (_urlIndex == self.pageControl.numberOfPages) {
         _urlIndex --;
         temp = self.rightView;
@@ -150,7 +154,7 @@
         self.currentView = self.leftView;
         self.leftView = temp;
         if (_urlIndex > 0) {
-            [self loadWebView: self.rightView withIndex: _urlIndex-1];
+            [self loadWebView: self.leftView withIndex: _urlIndex-1];
         }
     }
     if (_urlIndex < self.pageControl.numberOfPages - 1) {
@@ -178,15 +182,16 @@
                      completion: ^(BOOL what){
                          [UIView animateWithDuration: 0.5f
                                           animations:^{
-                                              if (_urlIndex < self.pageControl.numberOfPages - 1){
+                                              self.currentView.transform = CGAffineTransformIdentity;                                              if (_urlIndex < self.pageControl.numberOfPages - 1){
                                                   self.rightView.frame = currentFrame;
                                               } else if (_urlIndex > 0){
                                                   self.leftView.frame = currentFrame;
                                               }
                                           }
-                                          completion: nil
+                                          completion: ^(BOOL what) {
+                                              [self deleteCurrentUrl];
+                                          }
                           ];
-                         [self deleteCurrentUrl];
                      }];
 }
 
