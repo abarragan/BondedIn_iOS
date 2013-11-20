@@ -148,6 +148,7 @@
 		BE8E3876183BD208004C3A6A /* DetailViewCotroller */ = {
 			isa = PBXGroup;
 			children = (
+				BE933B98183CF1CC00314502 /* ProfileViewController */,
 				BE87C5D9182D7AAE003FA309 /* DetailViewController.m */,
 				BE99861A1823F67D00E30AD5 /* DetailViewController.h */,
 				D967E658183A882400FCF660 /* ProfileTableViewCell.h */,
@@ -190,6 +191,19 @@
 			name = SelectionListViewController;
 			sourceTree = "<group>";
 		};
+		BE933B98183CF1CC00314502 /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BE8588E818327B130098D93E /* NoteViewController.h */,
+				BE8588E918327B130098D93E /* NoteViewController.m */,
+				BE8C998D1831495500882F34 /* ProfileViewController.h */,
+				BE898A97183176BD00BB6E99 /* ContactViewController.h */,
+				BE898A98183176BD00BB6E99 /* ContactViewController.m */,
+				BE8C998E1831495500882F34 /* ProfileViewController.m */,
+			);
+			name = ProfileViewController;
+			sourceTree = "<group>";
+		};
 		BE9985EB1823F67C00E30AD5 = {
 			isa = PBXGroup;
 			children = (
@@ -229,13 +243,7 @@
 				BE8C998A1831480500882F34 /* MainStoryboard.storyboard */,
 				BE8E5288182D468400325707 /* TabBarViewController.m */,
 				BE8E5287182D468400325707 /* TabBarViewController.h */,
-				BE8588E818327B130098D93E /* NoteViewController.h */,
-				BE8588E918327B130098D93E /* NoteViewController.m */,
 				BE9986171823F67D00E30AD5 /* MasterViewController.h */,
-				BE8C998D1831495500882F34 /* ProfileViewController.h */,
-				BE898A97183176BD00BB6E99 /* ContactViewController.h */,
-				BE898A98183176BD00BB6E99 /* ContactViewController.m */,
-				BE8C998E1831495500882F34 /* ProfileViewController.m */,
 				BE9986181823F67D00E30AD5 /* MasterViewController.m */,
 				BE9986141823F67D00E30AD5 /* BondedIn.xcdatamodeld */,
 				BE9986001823F67C00E30AD5 /* Supporting Files */,

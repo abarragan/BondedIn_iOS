@@ -106,8 +106,8 @@
         
         //PROFILE//
         Profile *profile1 = [NSEntityDescription
-                            insertNewObjectForEntityForName:@"Profile"
-                            inManagedObjectContext:context];
+                             insertNewObjectForEntityForName:@"Profile"
+                             inManagedObjectContext:context];
         profile1.firstName=@"Esteban";
         profile1.lastName=@"Roodil";
         profile1.company= @"Devspark";
@@ -120,8 +120,8 @@
         
         
         Profile *profile2 = [NSEntityDescription
-                   insertNewObjectForEntityForName:@"Profile"
-                   inManagedObjectContext:context];
+                             insertNewObjectForEntityForName:@"Profile"
+                             inManagedObjectContext:context];
         profile2.firstName=@"Raul";
         profile2.lastName=@"Roodil";
         profile2.company= @"Devspark";
@@ -133,17 +133,17 @@
         profile2.publicProfileUrl=@"http://www.linkedin.com/in/estebanrodil";
         
         Profile *profile3 = [NSEntityDescription
-                   insertNewObjectForEntityForName:@"Profile"
-                   inManagedObjectContext:context];
-        profile3.firstName=@"Pedro";
-        profile3.lastName=@"Roodil";
+                             insertNewObjectForEntityForName:@"Profile"
+                             inManagedObjectContext:context];
+        profile3.firstName=@"Maria Florencia";
+        profile3.lastName=@"Vega";
         profile3.company= @"Devspark";
-        profile3.province=@"Santa Fe";
-        profile3.city=@"Rosario";
+        profile3.province=@"Buenos Aires";
+        profile3.city=@"Tandil";
         profile3.phone=[NSNumber numberWithInt:1232656545];
         profile3.mail=@"and.ottonello@gmail.com";
-        profile3.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mprx/0_9r8JGG3OmpMl-Jvn9nr6G8t1ayOgKJqnNtNQG88aAMoS7gi9s9Kzuhqhh-YC1Ozsc1CFDFtcxJTw";
-        profile3.publicProfileUrl=@"http://www.linkedin.com/in/estebanrodil";
+        profile3.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mpr/shrink_200_200/p/1/000/0b3/379/24b1496.jpg";
+        profile3.publicProfileUrl=@"http://www.linkedin.com/pub/mar%C3%ADa-florencia-vega/25/90a/4b8";
         
         Profile *profile4 = [NSEntityDescription
                              insertNewObjectForEntityForName:@"Profile"
@@ -154,7 +154,7 @@
         profile4.province=@"Cordoba";
         profile4.city=@"Cordoba";
         profile4.phone=[NSNumber numberWithInt:1232656545];
-       // profile4.mail=@"and.ottonello@gmail.com";
+        profile4.mail=@"and.ottonello@gmail.com";
         profile4.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mprx/0_IdV5b2xkFSVkWe09deysb7d6bIxLImf9dSaVb7ZBZSwzqo4nbfoWdf2MW60VeWaVoo4UeH6H7m3O";
         profile4.publicProfileUrl=@"http://www.linkedin.com/pub/daniela-s%C3%A1nchez/b/779/27";
         
@@ -170,7 +170,7 @@
         profile5.mail=@"and.ottonello@gmail.com";
         profile5.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mprx/0_ZPIPyQcCZNyfyLza41o8yXna4qEayQLaVA02yXkYFAY0_G-mqvRx-krK9sor0TXGMKdSP_9pHqto";
         profile5.publicProfileUrl=@"http://www.linkedin.com/in/jchiavaro";
-
+        
         Profile *profile6 = [NSEntityDescription
                              insertNewObjectForEntityForName:@"Profile"
                              inManagedObjectContext:context];
@@ -183,11 +183,76 @@
         profile6.mail=@"and.ottonello@gmail.com";
         profile6.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mprx/0_OSEuUBVkcb9TW6m2yoH0UzHHv3Lfd5Y2pfY1Uqo4EXAO93Wutws8zNY9U75AECxh0metNPqZMX2m";
         profile6.publicProfileUrl=@"http://www.linkedin.com/pub/facundo-fumaneri/5/b11/70b";
-
+        
+        Profile *profile7 = [NSEntityDescription
+                             insertNewObjectForEntityForName:@"Profile"
+                             inManagedObjectContext:context];
+        profile7.firstName=@"Andrea";
+        profile7.lastName=@"Ottonello";
+        profile7.company= @"Devspark";
+        profile7.province=@"Buenos Aires";
+        profile7.city=@"Tandil";
+        profile7.phone=[NSNumber numberWithInt:1232656545];
+        profile7.mail=@"and.ottonello@gmail.com";
+        profile7.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/pub/image-02QoHpj54tUxpRLEuNCurvxEEpF4_ElZp2FRRpZxEkkXuZrX02QRp085EZzXfpNKG5Ho/andrea-ottonello.jpg";
+        profile7.publicProfileUrl=@"http://www.linkedin.com/pub/andrea-ottonello/27/a35/20";
+        
+        Profile *profile8 = [NSEntityDescription
+                             insertNewObjectForEntityForName:@"Profile"
+                             inManagedObjectContext:context];
+        profile8.firstName=@"Fernando";
+        profile8.lastName=@"Echeverri";
+        profile8.company= @"Devspark";
+        profile8.province=@"Buenos Aires";
+        profile8.city=@"Tandil";
+        profile8.phone=[NSNumber numberWithInt:1232656545];
+        profile8.mail=@"and.ottonello@gmail.com";
+        profile8.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mpr/shrink_200_200/p/1/005/018/071/1ffb841.jpg";
+        profile8.publicProfileUrl=@"http://www.linkedin.com/pub/fernando-echeverri/32/905/772";
+        
+        Profile *profile9 = [NSEntityDescription
+                             insertNewObjectForEntityForName:@"Profile"
+                             inManagedObjectContext:context];
+        profile9.firstName=@"Silvio";
+        profile9.lastName=@"Jaureguibehere";
+        profile9.company= @"Devspark";
+        profile9.province=@"Buenos Aires";
+        profile9.city=@"Tandil";
+        profile9.phone=[NSNumber numberWithInt:1232656545];
+        profile9.mail=@"and.ottonello@gmail.com";
+        profile9.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mpr/shrink_200_200/p/5/000/1fd/126/23d00fa.jpg";
+        profile9.publicProfileUrl=@"http://www.linkedin.com/pub/silvio-jaureguibehere/39/b12/464";
+        
+        Profile *profile10 = [NSEntityDescription
+                              insertNewObjectForEntityForName:@"Profile"
+                              inManagedObjectContext:context];
+        profile10.firstName=@"Silvio";
+        profile10.lastName=@"Jaureguibehere";
+        profile10.company= @"Devspark";
+        profile10.province=@"Buenos Aires";
+        profile10.city=@"Tandil";
+        profile10.phone=[NSNumber numberWithInt:1232656545];
+        profile10.mail=@"and.ottonello@gmail.com";
+        profile10.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mpr/shrink_200_200/p/8/000/206/1f5/358e0d4.jpg";
+        profile10.publicProfileUrl=@"http://www.linkedin.com/pub/lucas-dimitroff/5b/898/773";
+        
+        Profile *profile11 = [NSEntityDescription
+                              insertNewObjectForEntityForName:@"Profile"
+                              inManagedObjectContext:context];
+        profile11.firstName=@"Nicolas";
+        profile11.lastName=@"Espejo";
+        profile11.company= @"Devspark";
+        profile11.province=@"Buenos Aires";
+        profile11.city=@"Tandil";
+        profile11.phone=[NSNumber numberWithInt:1232656545];
+        profile11.mail=@"and.ottonello@gmail.com";
+        profile11.pictureUrl=@"http://m.c.lnkd.licdn.com/mpr/mpr/shrink_200_200/p/7/000/271/125/190e05b.jpg";
+        profile11.publicProfileUrl=@"http://www.linkedin.com/pub/nicol%C3%A1s-espejo/37/392/795";
+        
         //FIT//
         Fit *fit1 = [NSEntityDescription
-                                  insertNewObjectForEntityForName:@"Fit"
-                                  inManagedObjectContext:context];
+                     insertNewObjectForEntityForName:@"Fit"
+                     inManagedObjectContext:context];
         
         fit1.status= @"Favorites";
         fit1.fitProfile=profile1;
@@ -227,6 +292,42 @@
         fit6.status= @"Favorites";
         fit6.fitProfile=profile6;
         
+        Fit *fit7 = [NSEntityDescription
+                     insertNewObjectForEntityForName:@"Fit"
+                     inManagedObjectContext:context];
+        
+        fit7.status= @"New Search";
+        fit7.fitProfile=profile7;
+        
+        Fit *fit8 = [NSEntityDescription
+                     insertNewObjectForEntityForName:@"Fit"
+                     inManagedObjectContext:context];
+        
+        fit8.status= @"New Search";
+        fit8.fitProfile=profile8;
+        
+        Fit *fit9 = [NSEntityDescription
+                     insertNewObjectForEntityForName:@"Fit"
+                     inManagedObjectContext:context];
+        
+        fit9.status= @"New Search";
+        fit9.fitProfile=profile9;
+        
+        Fit *fit10 = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Fit"
+                      inManagedObjectContext:context];
+        
+        fit10.status= @"New Search";
+        fit10.fitProfile=profile10;
+        
+        
+        Fit *fit11 = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Fit"
+                      inManagedObjectContext:context];
+        
+        fit11.status= @"Deleted";
+        fit11.fitProfile=profile11;
+        
         ///RELATIONS//
         [requisition addRequisitionLocationObject:location1];
         [requisition addRequisitionLocationObject:location2];
@@ -236,13 +337,22 @@
         [requisition addRequisitionFitObject: fit4];
         [requisition addRequisitionFitObject: fit5];
         [requisition addRequisitionFitObject: fit6];
+        [requisition addRequisitionFitObject: fit7];
+        [requisition addRequisitionFitObject: fit8];
+        [requisition addRequisitionFitObject: fit9];
+        [requisition addRequisitionFitObject: fit10];
+        [requisition addRequisitionFitObject: fit11];
         fit1.fitRequisition=requisition;
         fit2.fitRequisition=requisition;
         fit3.fitRequisition=requisition;
         fit4.fitRequisition=requisition;
         fit5.fitRequisition=requisition;
         fit6.fitRequisition=requisition;
-
+        fit7.fitRequisition=requisition;
+        fit8.fitRequisition=requisition;
+        fit9.fitRequisition=requisition;
+        fit10.fitRequisition=requisition;
+        fit11.fitRequisition=requisition;
 
         
         NSError *error;

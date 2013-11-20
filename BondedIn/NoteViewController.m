@@ -27,7 +27,10 @@
         _contactItem=contactItem;
     }
 }
-
+- (IBAction)textViewDoneClicked:(id)sender {
+    [self.textView resignFirstResponder];
+    
+}
 
 - (void)viewDidLoad
 {
@@ -36,16 +39,22 @@
     if(_contactItem.fitNote!=nil){
        self.textView.text=_contactItem.fitNote.name;
     }
-  
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-     UITouch *touch = [[event allTouches] anyObject];
-     if ([self.textView isFirstResponder] && [touch view] != self.textView) {
-         [self.textView resignFirstResponder];
-    }
-    [super touchesBegan:touches withEvent:event];
+    //Create Toolbar
+    UIToolbar* keyboardDoneButtonView = [[UIToolbar alloc] init];
+    keyboardDoneButtonView.frame=CGRectMake(0,75,180,10);
+    keyboardDoneButtonView.barStyle =UIBarStyleBlackTranslucent;
+    keyboardDoneButtonView.tintColor = nil;
+    [keyboardDoneButtonView sizeToFit];
+    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    //Create button "Done"
+    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(textViewDoneClicked:) ];
+    [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:flexibleSpaceLeft, doneButton, nil]];
+    
+    //add a Accessory with toolbar
+   self.textView.inputAccessoryView = keyboardDoneButtonView;
+   
 }
 
 - (void)didReceiveMemoryWarning

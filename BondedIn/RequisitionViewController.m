@@ -42,12 +42,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Requisition";
-    /*
-    if (self.requisition == nil)
-        self.nameTextField.text = @"New Requisition";
-    [self.nameTextField resignFirstResponder];
-    [self.view endEditing:YES];
-     */
 }
 
 
@@ -63,6 +57,8 @@
 
 -(void) setRequisition: (Requisition*) openedRequisition {
     _requisition = openedRequisition;
+    self.title=self.requisition.name;
+    self.detail=self.requisition.briefDescription;
     self.technologies = [[self.requisition.requisitionTechnology allObjects] mutableCopy];
     self.locations = [[self.requisition.requisitionLocation allObjects] mutableCopy];
     [self.tableView reloadData];
@@ -106,12 +102,12 @@
     if (indexPath.section == DETAILS_SECTION){
         if (indexPath.item == 0) {
               cell = [tableView dequeueReusableCellWithIdentifier:@"TitleCell"];
-            [(TitleTableViewCell*)cell configureWithTitle: _requisition.name];
+            [(TitleTableViewCell*)cell configureWithTitle: self.title];
             [(TitleTableViewCell*)cell setDelegate:self];
               
         } else {
              cell = (DetailTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"DetailsCell" forIndexPath:indexPath];
-            [(DetailTableViewCell*)cell configureWithDetail:_requisition.briefDescription];
+            [(DetailTableViewCell*)cell configureWithDetail:self.detail];
             [(DetailTableViewCell*)cell setDelegate:self];
         }
         

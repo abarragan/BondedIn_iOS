@@ -42,37 +42,38 @@
     NSError *error = nil;
     NSManagedObjectContext* context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
-    int index=[[self.childViewControllers objectAtIndex: tagNewSearch]urlIndex];
-    Fit * fit= [self.rowsNewSearch objectAtIndex:index];
-    
-    //add to favorite
-    if(isLeft){
-       
-        fit.status=favorites;
+    if([self.rowsNewSearch count]>0){
+        int index=[[self.childViewControllers objectAtIndex: tagNewSearch]urlIndex];
+        Fit * fit= [self.rowsNewSearch objectAtIndex:index];
         
-        // Save the context.
-        if (![context save:&error]) {
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+        //add to favorite
+        if(isLeft){
+            
+            fit.status=favorites;
+            
+            // Save the context.
+            if (![context save:&error]) {
+                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                abort();
+            }
+            [self configureTabs];
+            //Data of Favorites
+            [[self.childViewControllers objectAtIndex:tagFavorites]setDetailItems:self.rowsFavorites andTypeDetail:favorites];
         }
-        [self configureTabs];
-        //Data of Favorites
-        [[self.childViewControllers objectAtIndex:tagFavorites]setDetailItems:self.rowsFavorites andTypeDetail:favorites];
-    }
-    //add to deleted
-    else{
-        fit.status=deleted;
-        
-        // Save the context.
-        if (![context save:&error]) {
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+        //add to deleted
+        else{
+            fit.status=deleted;
+            
+            // Save the context.
+            if (![context save:&error]) {
+                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                abort();
+            }
+            [self configureTabs];
+            //Data of deleted
+            [[self.childViewControllers objectAtIndex:tagDeleted]setDetailItems:self.rowsDeleted andTypeDetail:deleted];
         }
-        [self configureTabs];
-        //Data of deleted
-        [[self.childViewControllers objectAtIndex:tagDeleted]setDetailItems:self.rowsDeleted andTypeDetail:deleted];
     }
-
 }
 
 - (void)configureTabs{

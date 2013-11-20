@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "ProfileTableViewCell.h"
+#import "ProfileViewController.h"
 
 #define favorites @"Favorites"
 #define deleted @"Deleted"
@@ -28,13 +29,7 @@
     self.typeDetail=typeDetail;
     self.rows = newDetailItems;
     [self.tableView reloadData];
-    /*
-    if([self.typeDetail isEqualToString:deleted]){
-        [self.tableView setAllowsSelection:NO];
-    } else {
-        [self.tableView setAllowsSelection:YES];
-    }
-     */
+  
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -43,10 +38,9 @@
     if ([[segue identifier] isEqualToString:@"profileView"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Fit *fit=  [self.rows objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setProfile:fit];
+        [[segue destinationViewController]setProfile:fit];
     } 
-    
-}
+   }
 
 - (void)viewDidLoad
 {

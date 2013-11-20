@@ -39,7 +39,7 @@
     //add a Accessory with toolbar
     self.titleTextField.inputAccessoryView = keyboardDoneButtonView;
     self.titleTextField.text=title;
-    [self.titleTextField resignFirstResponder];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

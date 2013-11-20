@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Requisition.h"
-#import "ProfileViewController.h"
 #import "Profile.h"
 #import "Fit.h"
 

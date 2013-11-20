@@ -50,7 +50,7 @@
                                }
                            }];
     self.namelabel.text = name;
-    self.cityLabel.text = [NSString stringWithFormat:@"City: %@", city];
+    self.cityLabel.text = [NSString stringWithFormat:@"Province: %@", city];
     self.companyLabel.text = [NSString stringWithFormat:@"Company: %@", company];
 }
 
