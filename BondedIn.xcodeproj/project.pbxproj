@@ -11,6 +11,7 @@
 		BE87C5DA182D7AAE003FA309 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE87C5D9182D7AAE003FA309 /* DetailViewController.m */; };
 		BE884531182422B10036CA99 /* RequisitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE884530182422B10036CA99 /* RequisitionViewController.m */; };
 		BE898A99183176BD00BB6E99 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE898A98183176BD00BB6E99 /* ContactViewController.m */; };
+		BE8BC5F2183E52E800E709E6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8BC5F1183E52E800E709E6 /* Default.png */; };
 		BE8C998C1831480500882F34 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8C998A1831480500882F34 /* MainStoryboard.storyboard */; };
 		BE8C998F1831495500882F34 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C998E1831495500882F34 /* ProfileViewController.m */; };
 		BE8E3865183BCFF6004C3A6A /* Technology.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E3864183BCFF6004C3A6A /* Technology.m */; };
@@ -23,7 +24,6 @@
 		BE8E387F183BD382004C3A6A /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E387E183BD382004C3A6A /* DetailTableViewCell.m */; };
 		BE8E5289182D468400325707 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E5288182D468400325707 /* TabBarViewController.m */; };
 		BE907A54183660120057FB93 /* WebCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE907A53183660120057FB93 /* WebCollectionViewController.m */; };
-		BE975159183D32FA0076EA08 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BE975158183D32FA0076EA08 /* Default.png */; };
 		BE9985F81823F67C00E30AD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F71823F67C00E30AD5 /* UIKit.framework */; };
 		BE9985FA1823F67C00E30AD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985F91823F67C00E30AD5 /* Foundation.framework */; };
 		BE9985FC1823F67C00E30AD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9985FB1823F67C00E30AD5 /* CoreGraphics.framework */; };
@@ -50,6 +50,7 @@
 		BE884530182422B10036CA99 /* RequisitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequisitionViewController.m; sourceTree = "<group>"; };
 		BE898A97183176BD00BB6E99 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		BE898A98183176BD00BB6E99 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		BE8BC5F1183E52E800E709E6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BE8C998B1831480500882F34 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = BondedIn/en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BE8C998D1831495500882F34 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		BE8C998E1831495500882F34 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		BE8E5288182D468400325707 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		BE907A52183660120057FB93 /* WebCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCollectionViewController.h; sourceTree = "<group>"; };
 		BE907A53183660120057FB93 /* WebCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebCollectionViewController.m; sourceTree = "<group>"; };
-		BE975158183D32FA0076EA08 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Downloads/Default.png; sourceTree = "<group>"; };
 		BE9985F41823F67C00E30AD5 /* BondedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BondedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9985F71823F67C00E30AD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE9985F91823F67C00E30AD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -254,7 +254,7 @@
 		BE9986001823F67C00E30AD5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BE975158183D32FA0076EA08 /* Default.png */,
+				BE8BC5F1183E52E800E709E6 /* Default.png */,
 				BE9986051823F67C00E30AD5 /* main.m */,
 				BE9986071823F67C00E30AD5 /* BondedIn-Prefix.pch */,
 				BE9986011823F67C00E30AD5 /* BondedIn-Info.plist */,
@@ -321,7 +321,7 @@
 				D967E65718369CB200FCF660 /* down@2x.png in Resources */,
 				BE8C998C1831480500882F34 /* MainStoryboard.storyboard in Resources */,
 				D967E65618369CB100FCF660 /* down.png in Resources */,
-				BE975159183D32FA0076EA08 /* Default.png in Resources */,
+				BE8BC5F2183E52E800E709E6 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

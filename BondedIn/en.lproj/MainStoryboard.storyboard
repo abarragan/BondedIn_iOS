@@ -374,10 +374,11 @@
         <scene sceneID="NY6-aS-hkL">
             <objects>
                 <tableViewController id="ocv-8s-Gxd" customClass="RequisitionViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="N11-VN-8YN">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="N11-VN-8YN">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TitleCell" id="v0b-Sf-vm1" customClass="TitleTableViewCell">
                                 <rect key="frame" x="0.0" y="46" width="320" height="45"/>
@@ -386,17 +387,17 @@
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xn8-oV-7Kp">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xn8-oV-7Kp">
                                             <rect key="frame" x="12" y="11" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="6QT-ey-32J">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="unlessEditing" id="6QT-ey-32J">
                                             <rect key="frame" x="70" y="7" width="210" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -526,7 +527,7 @@
                                 </view>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailsHeaderCell" id="EwK-x1-Zdo">
-                                <rect key="frame" x="0.0" y="491" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="491" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -549,7 +550,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="3sO-7a-HsA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="aYE-ee-IRg">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="aYE-ee-IRg">
                             <connections>
                                 <action selector="doneEditing:" destination="ocv-8s-Gxd" id="eGr-ew-0WE"/>
                             </connections>
@@ -613,7 +614,6 @@
         <class className="DetailTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailTableViewCell.h"/>
             <relationships>
-                <relationship kind="action" name="textViewDoneClicked:"/>
                 <relationship kind="outlet" name="detailTextView" candidateClass="UITextView"/>
             </relationships>
         </class>
@@ -634,7 +634,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NoteViewController.h"/>
             <relationships>
                 <relationship kind="action" name="doneEditing:"/>
-                <relationship kind="action" name="textViewDoneClicked:"/>
                 <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
             </relationships>
         </class>
