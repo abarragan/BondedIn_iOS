@@ -18,8 +18,8 @@
 
 @property (strong, nonatomic) NSMutableArray* locations;
 @property (strong, nonatomic) NSMutableArray* technologies;
-@property (strong, nonatomic) NSString* title;
-@property (strong, nonatomic) NSString* detail;
+@property (strong, nonatomic) NSString* reqTitle;
+@property (strong, nonatomic) NSString* reqDetail;
 
 - (IBAction)doneEditing:(id)sender;
 
@@ -42,23 +42,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Requisition";
+    [self.view endEditing:YES];
 }
 
-
-
 -(void) titleTableViewCellController: (TitleTableViewCell*) titleTableViewCell titleChange: (NSString*)title{
-    self.title=title;
+    self.reqTitle = title;
 }
 
 -(void) detailTableViewCellController: (TitleTableViewCell*) detailTableViewCell detailChange: (NSString*)detail{
-    self.detail=detail;
+    self.reqDetail = detail;
 }
 
 
 -(void) setRequisition: (Requisition*) openedRequisition {
     _requisition = openedRequisition;
-    self.title=self.requisition.name;
-    self.detail=self.requisition.briefDescription;
+    self.reqTitle = self.requisition.name;
+    self.reqDetail = self.requisition.briefDescription;
     self.technologies = [[self.requisition.requisitionTechnology allObjects] mutableCopy];
     self.locations = [[self.requisition.requisitionLocation allObjects] mutableCopy];
     [self.tableView reloadData];
@@ -102,12 +101,12 @@
     if (indexPath.section == DETAILS_SECTION){
         if (indexPath.item == 0) {
               cell = [tableView dequeueReusableCellWithIdentifier:@"TitleCell"];
-            [(TitleTableViewCell*)cell configureWithTitle: self.title];
+            [(TitleTableViewCell*)cell configureWithTitle: self.reqTitle];
             [(TitleTableViewCell*)cell setDelegate:self];
               
         } else {
              cell = (DetailTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"DetailsCell" forIndexPath:indexPath];
-            [(DetailTableViewCell*)cell configureWithDetail:self.detail];
+            [(DetailTableViewCell*)cell configureWithDetail:self.reqDetail];
             [(DetailTableViewCell*)cell setDelegate:self];
         }
         
@@ -170,8 +169,8 @@
 
     }
     
-    self.requisition.name = self.title;
-    self.requisition.briefDescription = self.detail;
+    self.requisition.name = self.reqTitle;
+    self.requisition.briefDescription = self.reqDetail;
     [self.requisition addRequisitionLocation:newLocations];
     [self.requisition addRequisitionTechnology:newTechs];    
     
