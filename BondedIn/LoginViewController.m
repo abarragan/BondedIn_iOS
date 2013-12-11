@@ -25,35 +25,39 @@
    
 }
 
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
     //ONLY TO TEST
-    NSString * user=@"devoler@mail.com";
+    NSString * user=@"developer@mail.com";
     NSString * password=@"dev123";
-    if ([[segue identifier] isEqualToString:@"masterView"]) {
+    //check user
+    if(![self.txtUser.text isEqualToString:user]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"User information is incorrect" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+
         
-        //check user
-        if(![self.txtUser.text isEqualToString:user]){
+    }
+    else {
+        //check password
+        if(![self.txtPassword.text isEqualToString:password]){
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                            message:@"User information is incorrect" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                                            message:@"Password information is incorrect" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
+            return NO;
             
         }
-        else {
-            //check password
-            if(![self.txtPassword.text isEqualToString:password]){
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                message:@"Password information is incorrect" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alert show];
-        
-            }
-            else{
-                //good!
-            }
+        else{
+            //good!
+            return YES;
+
         }
-   }
+    }
+    return YES;
+
 }
+
 
 - (IBAction)textViewDoneClicked:(id)sender {
     [self.txtUser resignFirstResponder];
