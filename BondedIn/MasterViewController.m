@@ -11,6 +11,7 @@
 #import "TabBarViewController.h"
 #import "RequisitionViewController.h"
 #import "Requisition.h"
+#import "AppDelegate.h"
 
 @interface MasterViewController () {
     RequisitionViewController* openingRequisition;
@@ -32,9 +33,12 @@
 {
     [super viewDidLoad];
     
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    NSManagedObjectContext* context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    self.managedObjectContext=context;
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    //self.navigationItem.rightBarButtonItem = self.addButtonItem;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
